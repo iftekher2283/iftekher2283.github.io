@@ -69,6 +69,22 @@
       pointer-events: none; /* so it doesn't block clicks */
       z-index: -1;
     }
+
+    @media (max-width:768px){
+      #starCanvas {
+        position: absolute;
+      }
+    }
+
+    @media (max-width:768px){
+      .hover\:shadow-2xl:hover { box-shadow: none; }
+      body::before { background: rgba(2,6,23,0.3); } /* less heavy overlay */
+    }
+
+    #mainContent {
+      overflow-anchor: none;
+    }
+
   </style>
 </head>
 <body class="text-gray-200 font-sans">
@@ -595,41 +611,50 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
 
   let stars = [];
   let shootingStars = [];
-const numStars = 1000; // dense sky
 
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
+// Use fewer stars for mobile
+  const isMobile = window.innerWidth < 768;
+  const numStars = isMobile ? 200 : 1000;
+  const maxGlow = isMobile ? 2 : 5;
+  const shootingStarChance = isMobile ? 0.005 : 0.015;
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', () => {
+    resizeCanvas();
+  initStars(); // reinitialize stars on resize
+});
+  resizeCanvas();
 
 // Initialize stars
-function initStars() {
-  stars = [];
-  for (let i = 0; i < numStars; i++) {
-    stars.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      r: Math.random() * 1.5 + 0.3,
-      baseAlpha: Math.random() * 0.7 + 0.3,
-      alphaOffset: Math.random() * Math.PI * 2,
-      flickerSpeed: Math.random() * 0.02 + 0.01,
-      glow: Math.random() * 5 + 2
-    });
+  function initStars() {
+    stars = [];
+    for (let i = 0; i < numStars; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * (isMobile ? 1 : 1.5) + 0.3,
+        baseAlpha: Math.random() * 0.7 + 0.3,
+        alphaOffset: Math.random() * Math.PI * 2,
+        flickerSpeed: Math.random() * 0.02 + 0.01,
+        glow: Math.random() * maxGlow + 1
+      });
+    }
   }
-}
 
 // Initialize shooting star
-function initShootingStar() {
+  function initShootingStar() {
+  if (isMobile && shootingStars.length > 1) return; // limit shooting stars on mobile
   shootingStars.push({
     x: Math.random() * canvas.width,
     y: Math.random() * canvas.height / 2,
-    length: Math.random() * 300 + 150,
-    speedX: Math.random() * 12 + 8,
-    speedY: Math.random() * 4 + 2, // slight diagonal
+    length: Math.random() * (isMobile ? 150 : 300) + (isMobile ? 75 : 150),
+    speedX: Math.random() * (isMobile ? 6 : 12) + (isMobile ? 4 : 8),
+    speedY: Math.random() * (isMobile ? 2 : 4) + (isMobile ? 1 : 2),
     alpha: 1,
-    fadeRate: Math.random() * 0.02 + 0.015
+    fadeRate: Math.random() * (isMobile ? 0.01 : 0.02) + (isMobile ? 0.007 : 0.015)
   });
 }
 
@@ -654,7 +679,7 @@ function drawStars(time) {
     ctx.lineTo(s.x - s.length, s.y - s.length * 0.1); // diagonal streak
     ctx.strokeStyle = `rgba(255,255,255,${s.alpha})`;
     ctx.lineWidth = 2;
-    ctx.shadowBlur = 15;
+    ctx.shadowBlur = isMobile ? 5 : 15;
     ctx.shadowColor = 'white';
     ctx.stroke();
 
@@ -668,13 +693,14 @@ function drawStars(time) {
   });
 
   // Occasionally spawn new shooting star
-  if (Math.random() < 0.015) initShootingStar();
+  if (Math.random() < shootingStarChance) initShootingStar();
 
   requestAnimationFrame(() => drawStars(performance.now() / 1000));
 }
 
 initStars();
 drawStars();
+
 </script>
 
 <script type="application/ld+json">

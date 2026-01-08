@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Iftekher Mahmud | Software Engineer | Online CV & Portfolio</title>
+
+  <meta name="description" content="Iftekher Mahmud is a Senior Software Engineer specializing in Java, Spring Boot, Fintech, ERP, and Mobile Financial Services. View his online CV, experience, and key projects." />
+  <meta name="keywords" content="Iftekher Mahmud, Iftekher, Mahmud, online cv, cv, software engineer, java developer, fintech engineer, portfolio" />
+  <link rel="canonical" href="https://www.iftekher.cv/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Iftekher Mahmud | Software Engineer | Online CV" />
+  <meta property="og:description" content="Lead Software Engineer with expertise in Java, Fintech, ERP systems, and Mobile Financial Services. View online CV and portfolio." />
+  <meta property="og:url" content="https://www.iftekher.cv/" />
+  <meta property="og:image" content="https://www.iftekher.cv/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Iftekher Mahmud | Software Engineer | Online CV" />
+  <meta name="twitter:description" content="Explore the online CV and portfolio of Iftekher Mahmud, Senior Software Engineer." />
+  <meta name="twitter:image" content="https://www.iftekher.cv/assets/og-image.jpg" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Global Background (responsive) -->
+  <style>
+    body {
+      background-image: url("./assets/bg-desktop.png"); /* Desktop wide */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      margin: 0;
+    }
+
+    /* Overlay with less opacity to make image more visible */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(2, 6, 23, 0.5);
+      z-index: -1;
+    }
+
+    /* Mobile portrait background */
+    @media (max-width: 768px) {
+      body {
+        background-image: url("./assets/bg-mobile.png");
+      }
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    #starCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* so it doesn't block clicks */
+      z-index: -1;
+    }
+  </style>
+</head>
+<body class="text-gray-200 font-sans">
+
+  <!-- STAR CANVAS -->
+  <canvas id="starCanvas"></canvas>
+
+  <!-- NAVBAR (Fixed with blackish transparent background) -->
+  <header class="fixed top-0 left-0 w-full bg-black/60 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+      <div>
+        <h1 class="text-2xl font-bold">Iftekher Mahmud</h1>
+        <p class="text-sm text-gray-200">Software Engineer & Educator</p>
+      </div>
+
+      <nav class="hidden md:flex gap-8 text-sm">
+        <a href="index.html" class="hover:text-white">Home</a>
+        <a href="#contact" class="hover:text-white">Contact</a>
+        <a href="#about" class="hover:text-white">About</a>
+        <a href="#skills" class="hover:text-white">Skills</a>
+        <a href="#education" class="hover:text-white">Educations</a>
+        <a href="#experience" class="hover:text-white">Experiences</a>
+        <a href="#key-projects" class="hover:text-white">Projects</a>
+        <a href="#research" class="hover:text-white">Research</a>
+        <a href="#courses" class="hover:text-white">Courses</a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="menuBtn" class="md:hidden text-2xl">☰</button>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV OVERLAY -->
+  <div id="mobileNavOverlay"
+  class="fixed inset-0 bg-black/50 z-40 hidden md:hidden">
+</div>
+
+<!-- MOBILE DRAWER MENU -->
+<div id="mobileMenu"
+class="fixed top-[88px] left-0 w-full bg-slate-900 z-50
+hidden md:hidden px-6 py-6 space-y-4
+transform -translate-y-4 opacity-0
+transition-all duration-300">
+<a href="index.html" class="block text-lg">Home</a>
+<a href="#contact" class="block text-lg">Contact</a>
+<a href="#about" class="block text-lg">About</a>
+<a href="#skills" class="block text-lg">Skills</a>
+<a href="#education" class="block text-lg">Education</a>
+<a href="#experience" class="block text-lg">Experience</a>
+<a href="#key-projects" class="block text-lg">Projects</a>
+<a href="#research" class="block text-lg">Research</a>
+<a href="#courses" class="block text-lg">Courses</a>
+</div>
+
+
+<!-- HERO SECTION -->
+<section class="max-w-7xl mx-auto px-6 py-10 grid md:grid-cols-2 gap-6 items-center mt-32">
+  <!-- Hero Text -->
+  <div>
+    <h2 class="text-4xl font-bold leading-tight">
+      Building Scalable & Secure<br />
+      <span class="text-blue-400">Software Solutions</span>
+    </h2>
+
+    <p class="mt-3 text-gray-200 max-w-xl">
+      Experienced Developer & Lecturer specializing in Java, Spring Boot, Grails,
+      SQL & Enterprise Systems.
+    </p>
+
+    <div class="mt-4 flex gap-4">
+      <a href="projects.html" class="bg-orange-600 hover:bg-orange-700 px-6 py-3 rounded-md inline-block">
+        View My Projects
+      </a>
+      <a href="./assets/IftekherMahmud_CV.pdf" download class="bg-blue-700 hover:bg-blue-800 px-6 py-3 rounded-md inline-block" target="blank">
+        Download CV
+      </a>
+    </div>
+  </div>
+
+  <!-- Profile Image (responsive, shifted up-right using Tailwind utilities) -->
+  <div class="flex justify-center md:justify-end relative">
+    <img
+    src="./assets/pp.png"
+    alt="Profile"
+    class="rounded-full object-cover w-64 h-64 md:w-72 md:h-72 md:-translate-x-4 md:-translate-y-4"
+    />
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section id="highlights" class="max-w-7xl mx-auto px-6 py-8">
+  <div class="grid md:grid-cols-4 gap-4 mb-4">
+    <div class="bg-slate-900/60 p-5 rounded-lg border border-slate-800">
+      <h4 class="font-semibold mb-1">Status</h4>
+      <p class="text-sm">BSc in CSE, Lead Software Engineer with 8+ years’ experience, Adjucnt Lecturer</p>
+    </div>
+
+    <div class="bg-slate-900/60 p-5 rounded-lg border border-slate-800">
+      <h4 class="font-semibold mb-1">Fields</h4>
+      <p class="text-sm">Software Development, Architecture Design, Teaching & Mentorship</p>
+    </div>
+
+    <div class="bg-slate-900/60 p-5 rounded-lg border border-slate-800">
+      <h4 class="font-semibold mb-1">Tech</h4>
+      <p class="text-sm">Java, Spring Boot, Grails, Oracle, PostgreSQL</p>
+    </div>
+
+    <div class="bg-slate-900/60 p-5 rounded-lg border border-slate-800">
+      <h4 class="font-semibold mb-1">Loves</h4>
+      <p class="text-sm">Problem Solving, Debugging, Teaching, Music</p>
+    </div>
+  </div>
+
+  <!-- Contact strip -->
+  
+
+<section id="contact" class="max-w-7xl mx-auto px-6 py-14">
+  <div class="bg-black/40 rounded-lg px-5 py-6 flex flex-col items-center gap-4 text-sm text-gray-300">
+    
+    <!-- Heading -->
+    <h3 class="text-2xl font-semibold text-gray-200 text-center">Reach Out To Me</h3>
+
+    <!-- Contact Items -->
+    <div class="flex flex-col md:flex-row md:items-center md:justify-center gap-3 w-full">
+      <!-- Phone -->
+      <span class="flex items-center gap-2">
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-black">
+          <img src="./icons/phone-4.png" alt="Phone" class="w-7 h-7" />
+        </span>
+        <span>+8801680161684</span>
+      </span>
+
+      <span class="hidden md:inline text-gray-500">|</span>
+
+      <!-- Email -->
+      <span class="flex items-center gap-2">
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-black">
+          <img src="./icons/mail-4.png" alt="Email" class="w-7 h-7" />
+        </span>
+        <span>iftekher2283@gmail.com</span>
+      </span>
+
+      <span class="hidden md:inline text-gray-500">|</span>
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/iftekher-mahmud-18654070/" target="_blank" class="flex items-center gap-2 hover:text-blue-400 transition-colors">
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-black">
+          <img src="./icons/linkedin.png" alt="LinkedIn" class="w-6 h-6" />
+        </span>
+        <span>LinkedIn</span>
+      </a>
+
+      <span class="hidden md:inline text-gray-500">|</span>
+
+      <!-- Facebook -->
+      <a href="https://www.facebook.com/share/181c7LLQQa/" target="_blank" class="flex items-center gap-2 hover:text-blue-500 transition-colors">
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-black">
+          <img src="./icons/facebook.png" alt="Facebook" class="w-6 h-6" />
+        </span>
+        <span>Facebook</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ABOUT -->
+<section id="about" class="max-w-7xl mx-auto px-6 py-8">
+  <h3 class="text-2xl font-semibold mb-2">About Me</h3>
+  <p class="max-w-3xl">
+    I am a software engineer and educator with hands-on experience building reliable, secure, and scalable systems—primarily in financial and academic domains. My work focuses on clean architecture, correctness, and long-term maintainability rather than short-lived trends.
+  </p>
+</section>
+
+<section id="expertise" class="max-w-7xl mx-auto px-6 py-12">
+  <h2 class="text-2xl font-semibold mb-4">
+    Fintech, Financial Services & ERP Systems Expertise
+  </h2>
+
+  <p class="text-gray-200 max-w-4xl mb-6 leading-relaxed">
+    I am a Fintech Software Engineer with extensive experience designing and building
+    large-scale financial systems, payment platforms, and enterprise ERP solutions.
+    My work spans mobile financial services, banking middleware, and core ERP modules,
+    supporting millions of daily transactions with a strong focus on reliability,
+    security, and performance.
+  </p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <div class="bg-slate-900/60 p-5 rounded-lg border border-slate-800">
+      <h4 class="font-semibold mb-1">Mobile Financial Services</h4>
+      <p class="text-sm text-gray-200">
+        Development and integration of large-scale MFS platforms including bill payment,
+        funds transfer, merchant payments, and top-up services.
+      </p>
+    </div>
+
+    <div class="bg-slate-900/60 p-5 rounded-lg border border-slate-800">
+      <h4 class="font-semibold mb-1">Banking Middleware & Integrations</h4>
+      <p class="text-sm text-gray-200">
+        Design of middleware and microservices handling bill payment, IPN, inter-bank
+        transfers, and third-party financial integrations.
+      </p>
+    </div>
+
+    <div class="bg-slate-900/60 p-5 rounded-lg border border-slate-800">
+      <h4 class="font-semibold mb-1">Payment Systems</h4>
+      <p class="text-sm text-gray-200">
+        End-to-end payment processing systems supporting millions of transactions,
+        with high availability, scalability, and fault tolerance.
+      </p>
+    </div>
+
+    <div class="bg-slate-900/60 p-5 rounded-lg border border-slate-800">
+      <h4 class="font-semibold mb-1">Enterprise ERP Systems</h4>
+      <p class="text-sm text-gray-200">
+        ERP module development for Finance, Fixed Asset, Inventory, and Billing,
+        tightly integrated with procurement and accounting systems.
+      </p>
+    </div>
+
+    <div class="bg-slate-900/60 p-5 rounded-lg border border-slate-800">
+      <h4 class="font-semibold mb-1">Microservices & Backend Architecture</h4>
+      <p class="text-sm text-gray-200">
+        Scalable backend architecture using Java, Spring Boot, and Grails,
+        optimized for high-volume enterprise and financial workloads.
+      </p>
+    </div>
+
+    <div class="bg-slate-900/60 p-5 rounded-lg border border-slate-800">
+      <h4 class="font-semibold mb-1">Security & Compliance</h4>
+      <p class="text-sm text-gray-200">
+        Secure financial system design with authentication, authorization,
+        auditing, and compliance-focused development practices.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="max-w-7xl mx-auto px-6 py-8">
+  <h3 class="text-2xl font-semibold mb-3">Skills & Expertise</h3>
+
+  <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+    <div class="bg-slate-900/60 py-4 rounded text-center flex flex-col items-center gap-2">
+      <img src="./icons/java.png" alt="Java" class="w-10 h-10" />
+      Java
+    </div>
+    <div class="bg-slate-900/60 py-4 rounded text-center flex flex-col items-center gap-2">
+      <img src="./icons/spring.png" alt="Spring Boot" class="w-10 h-10" />
+      Spring Boot
+    </div>
+    <div class="bg-slate-900/60 py-4 rounded text-center flex flex-col items-center gap-2">
+      <img src="./icons/sql.png" alt="SQL" class="w-10 h-10" />
+      SQL
+    </div>
+    <div class="bg-slate-900/60 py-4 rounded text-center flex flex-col items-center gap-2">
+      <img src="./icons/microservices.png" alt="Microservices" class="w-10 h-10" />
+      Microservices
+    </div>
+    <div class="bg-slate-900/60 py-4 rounded text-center flex flex-col items-center gap-2">
+      <img src="./icons/security.png" alt="Security" class="w-10 h-10" />
+      Security
+    </div>
+  </div>
+</section>
+
+<!-- TECHNICAL SKILLS -->
+<section id="technical-skills" class="max-w-7xl mx-auto px-6 py-8">
+  <h3 class="text-2xl font-semibold mb-4">Technical Skills</h3>
+  <div class="grid md:grid-cols-2 gap-6">
+    <div>
+      <h4 class="font-semibold mb-1">Languages</h4>
+      <p class="text-gray-200">Java, PHP, C/C++, HTML, CSS, Javascript</p>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-1">Frameworks & Libraries</h4>
+      <p class="text-gray-200">Spring Boot, Groovy on Grails, Bootstrap, Cocos2d</p>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-1">Databases</h4>
+      <p class="text-gray-200">PostgreSQL, Oracle, MySQL</p>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-1">Operating Systems</h4>
+      <p class="text-gray-200">Linux, Windows, Mac</p>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-1">Tools</h4>
+      <p class="text-gray-200">Git, IntelliJ IDEA, Net-Beans, Code Blocks, Eclipse, JavaFX Scene Builder, PHP My Admin, Android Studio</p>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-1">Areas of Expertise</h4>
+      <p class="text-gray-200">Enterprise Software, Middleware, API Integration, ERP Systems, FinTech Applications</p>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-1">Concepts</h4>
+      <p class="text-gray-200">Structured Programming, Object Oriented Programming, Struts, React, Latex, Objective C, Open GL, Open CV, Image Processing</p>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="max-w-7xl mx-auto px-6 py-8">
+  <h3 class="text-2xl font-semibold mb-3">Education</h3>
+
+  <div class="grid md:grid-cols-3 gap-4">
+    <!-- Education Card 1 -->
+    <div class="bg-slate-900/60 p-5 rounded-lg border border-slate-800 flex gap-3">
+      <img src="./icons/seu.png" alt="BSc" class="w-8 h-8 mt-1" />
+      <div>
+        <h4 class="text-lg font-semibold">Bachelor of Science (Bsc)</h4>
+        <p class="text-sm text-gray-200 mt-1">Department: <strong>Computer Science and Engineering</strong></p>
+        <p class="text-sm text-gray-200">Year: <strong>2012 – 2016</strong></p>
+        <p class="text-sm text-gray-200">Result: <strong>CGPA 3.18 / 4.00</strong></p>
+        <p class="text-sm text-gray-200 mt-1">Institution: <strong>Southeast University</strong></p>
+      </div>
+    </div>
+
+    <!-- Education Card 2 -->
+    <div class="bg-slate-900/60 p-5 rounded-lg border border-slate-800 flex gap-3">
+      <img src="./icons/mhc.png" alt="HSC" class="w-8 h-8 mt-1" />
+      <div>
+        <h4 class="text-lg font-semibold">Higher Secondary Certificate (HSC)</h4>
+        <p class="text-sm text-gray-200 mt-1">Group: <strong>Science</strong></p>
+        <p class="text-sm text-gray-200">Year: <strong>2009 – 2011</strong></p>
+        <p class="text-sm text-gray-200">Result: <strong>GPA 4.80 / 5.00</strong></p>
+        <p class="text-sm text-gray-200 mt-1">Board: <strong>Dhaka</strong></p>
+      </div>
+    </div>
+
+    <!-- Education Card 3 -->
+    <div class="bg-slate-900/60 p-5 rounded-lg border border-slate-800 flex gap-3">
+      <img src="./icons/pls.png" alt="SSC" class="w-8 h-8 mt-1" />
+      <div>
+        <h4 class="text-lg font-semibold">Secondary School Certificate (SSC)</h4>
+        <p class="text-sm text-gray-200 mt-1">Group: <strong>Science</strong></p>
+        <p class="text-sm text-gray-200">Year: <strong>2007 – 2009</strong></p>
+        <p class="text-sm text-gray-200">Result: <strong>GPA 5.00 / 5.00</strong></p>
+        <p class="text-sm text-gray-200 mt-1">Board: <strong>Dhaka</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="max-w-7xl mx-auto px-6 py-14">
+  <h3 class="text-2xl font-semibold mb-8">Experience</h3>
+
+  <div class="space-y-6">
+
+    <!-- BRAC IT Services -->
+    <div class="bg-slate-900/60 p-6 rounded-lg border border-slate-800
+    flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
+    <img
+    src="./logos/bits.jpeg"
+    alt="BRAC IT Services Limited"
+    class="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32
+    object-contain rounded-lg
+    mx-auto sm:mx-0 flex-shrink-0"
+    />
+    <div class="flex-1 w-full">
+      <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
+        <h4 class="text-lg font-semibold">Lead Software Engineer</h4>
+        <p class="text-sm text-gray-300 sm:whitespace-nowrap">2023 – Present</p>
+      </div>
+      <p class="text-gray-200">BRAC IT Services Limited</p>
+      <ul class="mt-2 text-sm text-gray-200 list-disc list-inside space-y-1">
+        <li>Lead development for ERP modules in Fixed Asset and Finance.</li>
+        <li>Designed and developed Inventory Management System.</li>
+        <li>Technologies: Groovy on Grails, Spring Boot, PostgreSQL.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Southeast University -->
+  <div class="bg-slate-900/60 p-6 rounded-lg border border-slate-800
+  flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
+  <img
+  src="./logos/seu.jpeg"
+  alt="Southeast University"
+  class="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32
+  object-contain rounded-lg
+  mx-auto sm:mx-0 flex-shrink-0"
+  />
+  <div class="flex-1 w-full">
+    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
+      <h4 class="text-lg font-semibold">Lecturer (Part-Time)</h4>
+      <p class="text-sm text-gray-300 sm:whitespace-nowrap">2023 – Present</p>
+    </div>
+    <p class="text-gray-200">Southeast University</p>
+    <ul class="mt-2 text-sm text-gray-200 list-disc list-inside space-y-1">
+      <li>Teach undergraduate courses in Java and Advanced Java.</li>
+      <li>Prepare and evaluate tests, assignments, and projects.</li>
+      <li>Mentor students and contribute to academic assessment.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Nagad -->
+<div class="bg-slate-900/60 p-6 rounded-lg border border-slate-800
+flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
+<img
+src="./logos/nagad.jpeg"
+alt="Nagad Limited"
+class="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32
+object-contain rounded-lg
+mx-auto sm:mx-0 flex-shrink-0"
+/>
+<div class="flex-1 w-full">
+  <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
+    <h4 class="text-lg font-semibold">Assistant Lead Engineer</h4>
+    <p class="text-sm text-gray-300 sm:whitespace-nowrap">2022 – 2023</p>
+  </div>
+  <p class="text-gray-200">Nagad Limited</p>
+  <ul class="mt-2 text-sm text-gray-200 list-disc list-inside space-y-1">
+    <li>Designed middleware architecture for external integrations.</li>
+    <li>Built scalable backend services for millions of transactions.</li>
+    <li>Technologies: Spring Boot, Oracle DB, MySQL.</li>
+  </ul>
+</div>
+</div>
+
+<!-- Dutch Bangla Bank -->
+<div class="bg-slate-900/60 p-6 rounded-lg border border-slate-800
+flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
+<img
+src="./logos/dbbl.jpeg"
+alt="Dutch Bangla Bank PLC"
+class="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32
+object-contain rounded-lg
+mx-auto sm:mx-0 flex-shrink-0"
+/>
+<div class="flex-1 w-full">
+  <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
+    <h4 class="text-lg font-semibold">Senior Officer (Software)</h4>
+    <p class="text-sm text-gray-300 sm:whitespace-nowrap">2019 – 2022</p>
+  </div>
+  <p class="text-gray-200">Dutch Bangla Bank PLC</p>
+  <ul class="mt-2 text-sm text-gray-200 list-disc list-inside space-y-1">
+    <li>Developed core features for Rocket Mobile Financial Services.</li>
+    <li>Contributed to Agent Banking and NexusPay platforms.</li>
+    <li>Technologies: Java, Oracle DB, WebLogic, Tomcat.</li>
+  </ul>
+</div>
+</div>
+
+<!-- ZIAU -->
+<div class="bg-slate-900/60 p-6 rounded-lg border border-slate-800
+flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
+<img
+src="./logos/ziau.jpeg"
+alt="ZIAU"
+class="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32
+object-contain rounded-lg
+mx-auto sm:mx-0 flex-shrink-0"
+/>
+<div class="flex-1 w-full">
+  <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
+    <h4 class="text-lg font-semibold">Software Engineer</h4>
+    <p class="text-sm text-gray-300 sm:whitespace-nowrap">2017 – 2019</p>
+  </div>
+  <p class="text-gray-200">ZIAU</p>
+  <ul class="mt-2 text-sm text-gray-200 list-disc list-inside space-y-1">
+    <li>Developed cross-platform mobile and web games.</li>
+    <li>Managed Play Store deployments and releases.</li>
+    <li>Technologies: Cocos2D-X (C++ & JS), SQLite.</li>
+  </ul>
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- KEY PROJECTS -->
+<section id="key-projects" class="max-w-7xl mx-auto px-6 py-8">
+  <h3 class="text-2xl font-semibold mb-4">Key Projects</h3>
+  <div class="space-y-6">
+    <div class="bg-slate-900/60 p-6 rounded-lg border border-slate-800 relative">
+      <div class="flex justify-between items-start">
+        <h4 class="font-semibold">ERP Enhancements – Finance, Fixed Asset, Inventory & Billing App</h4>
+        <p class="text-sm text-gray-200 whitespace-nowrap text-right">2023 – Present</p>
+      </div>
+      <ul class="mt-1 text-sm list-disc list-inside space-y-1">
+        <li>Developed ERP modules for finance and fixed asset management.</li>
+        <li>Built an inventory management system and a billing application tailored for enterprise use.</li>
+        <li>Collaborated with cross-functional teams to streamline workflows and reporting.</li>
+        <li><strong>Technologies:</strong> Groovy on Grails, Spring Boot, PostgreSQL</li>
+      </ul>
+    </div>
+
+    <div class="bg-slate-900/60 p-6 rounded-lg border border-slate-800 relative">
+      <div class="flex justify-between items-start">
+        <h4 class="font-semibold">Middleware Architecture for Financial Integrations</h4>
+        <p class="text-sm text-gray-200 whitespace-nowrap text-right">2022 – 2023</p>
+      </div>
+      <ul class="mt-1 text-sm list-disc list-inside space-y-1">
+        <li>Designed and led the architecture for integrating clients with bill payment, merchant services, bank transfers, and mobile top-ups.</li>
+        <li>Implemented scalable backend services supporting millions of daily transactions.</li>
+        <li>Improved system resilience and reduced downtime through optimized API handling.</li>
+        <li><strong>Technologies:</strong> Spring Boot, Oracle, MySQL</li>
+      </ul>
+    </div>
+
+    <div class="bg-slate-900/60 p-6 rounded-lg border border-slate-800 relative">
+      <div class="flex justify-between items-start">
+        <h4 class="font-semibold">Mobile Financial Services – Rocket, Agent Banking & NexusPay</h4>
+        <p class="text-sm text-gray-200 whitespace-nowrap text-right">2019 – 2022</p>
+      </div>
+      <ul class="mt-1 text-sm list-disc list-inside space-y-1">
+        <li>Enhanced core features of Rocket MFS, serving millions of users.</li>
+        <li>Developed modules for Agent Banking and NexusPay applications.</li>
+        <li>Strengthened platform security and scalability to handle high-volume transactions.</li>
+        <li><strong>Technologies:</strong> Java, Oracle DB, WebLogic</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research" class="max-w-7xl mx-auto px-6 py-8">
+  <h3 class="text-2xl font-semibold mb-4">Research</h3>
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="bg-slate-900/60 p-6 rounded-lg border border-slate-800">
+      <h4 class="text-lg font-semibold">Fishing Assistant For Visually Impaired Persons</h4>
+      <p class="text-sm mt-1"><strong>Team:</strong> Iftekher Mahmud</p>
+      <p class="text-sm mt-1"><strong>Technology:</strong> Micro-controller, Wi-Fi, Force Sensor, Java, Android</p>
+      <a href="https://tinyurl.com/2p9hx8nc" target="_blank" class="text-blue-400 hover:underline mt-2 inline-block">Paper Link</a>
+    </div>
+    <div class="bg-slate-900/60 p-6 rounded-lg border border-slate-800">
+      <h4 class="text-lg font-semibold">Garment’s ERP</h4>
+      <p class="text-sm mt-1"><strong>Team:</strong> Iftekher Mahmud, Md. Golam Mahadi Hasan, Md. Tawhid Hasnein</p>
+      <p class="text-sm mt-1"><strong>Technology:</strong> Java EE, Java FXML, MySQL, Hibernate</p>
+      <a href="https://tinyurl.com/32dh3fhz" target="_blank" class="text-blue-400 hover:underline mt-2 inline-block">Paper Link</a>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES / TEACHING -->
+<!-- COURSES / TEACHING -->
+<section id="courses" class="max-w-7xl mx-auto px-6 py-8">
+  <h3 class="text-2xl font-semibold mb-4">Teaching / Courses</h3>
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="bg-slate-900/60 p-6 rounded-lg border border-slate-800">
+      <h4 class="font-semibold mb-2">Advanced Java & Lab</h4>
+      <p class="text-sm text-gray-200">
+        Overview of system designing and different web application architectures, Java EE basics, Spring Web, Spring Boot, Spring Data JPA, and Spring Security.
+      </p>
+    </div>
+    <div class="bg-slate-900/60 p-6 rounded-lg border border-slate-800">
+      <h4 class="font-semibold mb-2">Introduction to Programming II (Java) & Lab</h4>
+      <p class="text-sm text-gray-200">
+        Core Object-Oriented Programming concepts, Java syntax, Classes, Methods, Variables, Control statements, Exceptions, JavaFX & FXML, JDBC, Hibernate, and Threads.
+      </p>
+    </div>
+    <div class="bg-slate-900/60 p-6 rounded-lg border border-slate-800">
+      <h4 class="font-semibold mb-2">Web & Internet Programming & Lab</h4>
+      <p class="text-sm text-gray-200">
+        Web application architectures, HTML, CSS, JavaScript, Bootstrap, PHP, APIs, SDLC, React, and MySQL fundamentals.
+      </p>
+    </div>
+    <div class="bg-slate-900/60 p-6 rounded-lg border border-slate-800">
+      <h4 class="font-semibold mb-2">Discrete Mathematics</h4>
+      <p class="text-sm text-gray-200">
+        Propositional Logic, Quantifiers, Relations, Functions, Time & Space Complexity, Trees, Graphs, Permutations & Combinations, and Mathematical Induction.
+      </p>
+    </div>
+    <div class="bg-slate-900/60 p-6 rounded-lg border border-slate-800">
+      <h4 class="font-semibold mb-2">Engineering Ethics</h4>
+      <p class="text-sm text-gray-200">
+        Code of Ethics, Standards of Professional Conduct, Fundamental Canons, Ethical Case Analysis, and Ethical Decision-Making Guidelines.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- FOOTER -->
+<footer class="text-center py-5 text-gray-500 text-sm">
+  © 2026 Iftekher Mahmud — All rights reserved
+</footer>
+
+<!-- JS -->
+<script>
+  const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('mobileNavOverlay');
+
+  function openMenu() {
+    menu.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+
+    requestAnimationFrame(() => {
+      menu.classList.remove('-translate-y-4', 'opacity-0');
+      menu.classList.add('translate-y-0', 'opacity-100');
+    });
+  }
+
+  function closeMenu() {
+    menu.classList.add('-translate-y-4', 'opacity-0');
+    menu.classList.remove('translate-y-0', 'opacity-100');
+
+    setTimeout(() => {
+      menu.classList.add('hidden');
+      overlay.classList.add('hidden');
+    }, 300);
+  }
+
+  btn.addEventListener('click', () => {
+    if (menu.classList.contains('hidden')) {
+      openMenu();
+    } else {
+      closeMenu();
+    }
+  });
+
+  overlay.addEventListener('click', closeMenu);
+
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
+
+  // STAR ANIMATION
+  const canvas = document.getElementById('starCanvas');
+  const ctx = canvas.getContext('2d');
+
+  let stars = [];
+  let shootingStars = [];
+const numStars = 1000; // dense sky
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+// Initialize stars
+function initStars() {
+  stars = [];
+  for (let i = 0; i < numStars; i++) {
+    stars.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.5 + 0.3,
+      baseAlpha: Math.random() * 0.7 + 0.3,
+      alphaOffset: Math.random() * Math.PI * 2,
+      flickerSpeed: Math.random() * 0.02 + 0.01,
+      glow: Math.random() * 5 + 2
+    });
+  }
+}
+
+// Initialize shooting star
+function initShootingStar() {
+  shootingStars.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height / 2,
+    length: Math.random() * 300 + 150,
+    speedX: Math.random() * 12 + 8,
+    speedY: Math.random() * 4 + 2, // slight diagonal
+    alpha: 1,
+    fadeRate: Math.random() * 0.02 + 0.015
+  });
+}
+
+function drawStars(time) {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Draw twinkling stars
+  stars.forEach(s => {
+    const alpha = s.baseAlpha + Math.sin(time * s.flickerSpeed + s.alphaOffset) * 0.5 * s.baseAlpha;
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255,255,255,${alpha})`;
+    ctx.shadowBlur = s.glow;
+    ctx.shadowColor = 'white';
+    ctx.fill();
+  });
+
+  // Draw shooting stars
+  shootingStars.forEach((s, idx) => {
+    ctx.beginPath();
+    ctx.moveTo(s.x, s.y);
+    ctx.lineTo(s.x - s.length, s.y - s.length * 0.1); // diagonal streak
+    ctx.strokeStyle = `rgba(255,255,255,${s.alpha})`;
+    ctx.lineWidth = 2;
+    ctx.shadowBlur = 15;
+    ctx.shadowColor = 'white';
+    ctx.stroke();
+
+    s.x += s.speedX;
+    s.y += s.speedY;
+    s.alpha -= s.fadeRate;
+
+    if (s.alpha <= 0 || s.x - s.length > canvas.width || s.y > canvas.height) {
+      shootingStars.splice(idx, 1);
+    }
+  });
+
+  // Occasionally spawn new shooting star
+  if (Math.random() < 0.015) initShootingStar();
+
+  requestAnimationFrame(() => drawStars(performance.now() / 1000));
+}
+
+initStars();
+drawStars();
+</script>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Iftekher Mahmud",
+    "url": "https://yourdomain.com/",
+    "jobTitle": "Senior Software Engineer",
+    "sameAs": [
+      "https://www.linkedin.com/in/your-profile",
+      "https://github.com/your-username"
+    ],
+    "knowsAbout": [
+      "Java",
+      "Spring Boot",
+      "Fintech",
+      "ERP Systems",
+      "Mobile Financial Services",
+      "Backend Development"
+    ]
+  }
+</script>
+
+</body>
+</html>

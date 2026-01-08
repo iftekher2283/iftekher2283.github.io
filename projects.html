@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Iftekher Mahmud | Software Engineer | Online CV & Portfolio</title>
+
+  <meta name="description" content="Iftekher Mahmud is a Senior Software Engineer specializing in Java, Spring Boot, Fintech, ERP, and Mobile Financial Services. View his online CV, experience, and key projects." />
+  <meta name="keywords" content="Iftekher Mahmud, Iftekher, Mahmud, online cv, cv, software engineer, java developer, fintech engineer, portfolio" />
+  <link rel="canonical" href="https://www.iftekher.cv/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Iftekher Mahmud | Software Engineer | Online CV" />
+  <meta property="og:description" content="Lead Software Engineer with expertise in Java, Fintech, ERP systems, and Mobile Financial Services. View online CV and portfolio." />
+  <meta property="og:url" content="https://www.iftekher.cv/" />
+  <meta property="og:image" content="https://www.iftekher.cv/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Iftekher Mahmud | Software Engineer | Online CV" />
+  <meta name="twitter:description" content="Explore the online CV and portfolio of Iftekher Mahmud, Senior Software Engineer." />
+  <meta name="twitter:image" content="https://www.iftekher.cv/assets/og-image.png" />
+
+
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Global Background (responsive) -->
+  <style>
+    body {
+      background-image: url("./assets/bg-desktop.png"); /* Desktop wide */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      margin: 0;
+    }
+
+    /* Overlay with less opacity to make image more visible */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(2, 6, 23, 0.5);
+      z-index: -1;
+    }
+
+    /* Mobile portrait background */
+    @media (max-width: 768px) {
+      body {
+        background-image: url("./assets/bg-mobile.png");
+      }
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    #starCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* so it doesn't block clicks */
+      z-index: -1;
+    }
+  </style>
+</head>
+<body class="text-gray-200 font-sans">
+
+  <!-- STAR CANVAS -->
+  <canvas id="starCanvas"></canvas>
+
+  <!-- NAVBAR (Fixed with blackish transparent background) -->
+  <header class="fixed top-0 left-0 w-full bg-black/60 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+      <div>
+        <h1 class="text-2xl font-bold">Iftekher Mahmud</h1>
+        <p class="text-sm text-gray-200">Software Engineer & Educator</p>
+      </div>
+
+      <nav class="hidden md:flex gap-8 text-sm">
+        <a href="index.html" class="hover:text-white">Home</a>
+        <a href="index.html#contact" class="hover:text-white">Contact</a>
+        <a href="index.html#about" class="hover:text-white">About</a>
+        <a href="index.html#skills" class="hover:text-white">Skills</a>
+        <a href="index.html#education" class="hover:text-white">Educations</a>
+        <a href="index.html#experience" class="hover:text-white">Experiences</a>
+        <a href="index.html#key-projects" class="hover:text-white">Projects</a>
+        <a href="index.html#research" class="hover:text-white">Research</a>
+        <a href="index.html#courses" class="hover:text-white">Courses</a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="menuBtn" class="md:hidden text-2xl">☰</button>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV OVERLAY -->
+  <div id="mobileNavOverlay"
+  class="fixed inset-0 bg-black/50 z-40 hidden md:hidden">
+</div>
+
+<!-- MOBILE DRAWER MENU -->
+<div id="mobileMenu"
+class="fixed top-[88px] left-0 w-full bg-slate-900 z-50
+hidden md:hidden px-6 py-6 space-y-4
+transform -translate-y-4 opacity-0
+transition-all duration-300">
+<a href="index.html" class="block text-lg">Home</a>
+<a href="index.html#contact" class="block text-lg">Contact</a>
+<a href="index.html#about" class="block text-lg">About</a>
+<a href="index.html#skills" class="block text-lg">Skills</a>
+<a href="index.html#education" class="block text-lg">Education</a>
+<a href="index.html#experience" class="block text-lg">Experience</a>
+<a href="index.html#key-projects" class="block text-lg">Projects</a>
+<a href="index.html#research" class="block text-lg">Research</a>
+<a href="index.html#courses" class="block text-lg">Courses</a>
+</div>
+
+
+
+<!-- HERO -->
+<section class="max-w-7xl mx-auto px-6 py-10 mt-32">
+  <h2 class="text-4xl font-bold mb-4">All Projects</h2>
+  <p class="text-gray-200 max-w-3xl">
+    This page contains all my professional projects with detailed descriptions, technologies used, and links wherever applicable.
+  </p>
+</section>
+
+<!-- PROJECTS SECTION -->
+<section id="projects" class="max-w-7xl mx-auto px-6 py-8 space-y-6">
+
+  <div class="relative bg-gradient-to-br from-slate-800/80 to-slate-900/70 p-6 rounded-xl border-l-4 border-blue-500 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col md:flex-row gap-4">
+
+    <!-- Logo -->
+    <div class="flex-shrink-0 w-24 h-24 md:w-28 md:h-28 bg-slate-700/40 rounded-lg flex items-center justify-center">
+      <img src="./project-logos/brac_logo.png" alt="Brac Logo" class="w-28 h-28 md:w-28 md:h-28 object-contain rounded-lg">
+    </div>
+    
+    <!-- Content -->
+    <div class="flex-1">
+      <!-- Header: Project Name -->
+      <h3 class="text-xl font-bold mb-1 text-white">Inventory Management System</h3>
+      
+      <!-- Duration & Company -->
+      <p class="text-sm text-blue-300 mb-3">2025 – Present | Brac IT Services Limited</p>
+      
+      <!-- Project Description -->
+      <p class="text-gray-200 mb-4">
+        The Inventory Management System for the Central Store of BRAC was developed to streamline stock control, procurement, and integration with the organization’s ERP. I designed and implemented the backend, ensuring robust handling of inventory transactions, real-time stock updates, and seamless connectivity with other ERP modules such as Procurement and Finance. The system supports complex workflows for central stores, automates reporting, and provides actionable insights to optimize inventory management. This project improved operational efficiency, reduced errors, and strengthened integration across multiple enterprise systems.
+      </p>
+      
+      <!-- Role -->
+      <p class="mb-2"><strong>Role:</strong> Architecture Designer, Development Lead & Backend Developer</p>
+
+      <!-- Technologies -->
+      <p class="mb-3"><strong>Technologies:</strong> Spring Boot, Angular, REST, PostgreSQL, Gitlab, Jira</p>
+      <!-- Link Button -->
+      <a href="https://erp.brac.net/" target="_blank" class="inline-block bg-blue-500 hover:bg-blue-600 px-5 py-2 rounded-lg font-medium text-white transition-colors duration-300">
+        View Application
+      </a>
+    </div>
+  </div>
+
+  <div class="relative bg-gradient-to-br from-slate-800/80 to-slate-900/70 p-6 rounded-xl border-l-4 border-blue-500 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col md:flex-row gap-4">
+
+    <!-- Logo -->
+    <div class="flex-shrink-0 w-24 h-24 md:w-28 md:h-28 bg-slate-700/40 rounded-lg flex items-center justify-center">
+      <img src="./project-logos/brac_logo.png" alt="Brac Logo" class="w-28 h-28 md:w-28 md:h-28 object-contain rounded-lg">
+    </div>
+    
+    <!-- Content -->
+    <div class="flex-1">
+      <!-- Header: Project Name -->
+      <h3 class="text-xl font-bold mb-1 text-white">Fixed Asset Module for Brac ERP</h3>
+      
+      <!-- Duration & Company -->
+      <p class="text-sm text-blue-300 mb-3">2023 – Present | Brac IT Services Limited</p>
+      
+      <!-- Project Description -->
+      <p class="text-gray-200 mb-4">
+        The Fixed Asset Management module is a core component of BRAC’s ERP, designed to manage the full lifecycle of organizational assets. It supports operations such as assignment, unassignment, transfer, depreciation, and disposal, ensuring accurate and real-time asset tracking. I led the development of this module, implementing robust backend logic and ensuring tight integration with BRAC’s Head Office Financial Management System as well as the Finance and Procurement modules of the ERP. The module improves asset accountability, automates depreciation calculations, and streamlines reporting for management decisions.
+      </p>
+      
+      <!-- Role -->
+      <p class="mb-2"><strong>Role:</strong> Development Lead & Developer</p>
+
+      <!-- Technologies -->
+      <p class="mb-3"><strong>Technologies:</strong> Groovy on Grails, REST, PostgreSQL, Gitlab, Jira</p>
+      <!-- Link Button -->
+      <a href="https://erp.brac.net/" target="_blank" class="inline-block bg-blue-500 hover:bg-blue-600 px-5 py-2 rounded-lg font-medium text-white transition-colors duration-300">
+        View Application
+      </a>
+    </div>
+  </div>
+
+  <div class="relative bg-gradient-to-br from-slate-800/80 to-slate-900/70 p-6 rounded-xl border-l-4 border-blue-500 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col md:flex-row gap-4">
+
+    <!-- Logo -->
+    <div class="flex-shrink-0 w-24 h-24 md:w-28 md:h-28 bg-slate-700/40 rounded-lg flex items-center justify-center">
+      <img src="./project-logos/nagad.jpeg" alt="Nagad Logo" class="w-28 h-28 md:w-28 md:h-28 object-contain rounded-lg">
+    </div>
+    
+    <!-- Content -->
+    <div class="flex-1">
+      <!-- Header: Project Name -->
+      <h3 class="text-xl font-bold mb-1 text-white">Nagad Middleware</h3>
+      
+      <!-- Duration & Company -->
+      <p class="text-sm text-blue-300 mb-3">2022 – 2023 | Nagad Limited</p>
+      
+      <!-- Project Description -->
+      <p class="text-gray-200 mb-4">
+        The Nagad Middleware platform is a large-scale, microservices-based system that enables one of Bangladesh’s largest Mobile Financial Services (MFS) providers. The middleware acts as the central communication layer between Nagad and multiple external partners, facilitating bill payments, IPN handling, and secure fund transfers to and from banks. Customers maintain their bank-linked accounts using only their mobile numbers, making reliability and security critical.
+
+        I played a key role in designing and developing multiple middleware services, integrating diverse external systems, and ensuring seamless transaction processing at scale. In addition to hands-on development, I led and mentored a middleware team, conducted code reviews, enforced architectural best practices, and prepared production release patches to ensure stable deployments and minimal downtime.
+      </p>
+      
+      <!-- Role -->
+      <p class="mb-2"><strong>Role:</strong> Software Architect, System Designer & Developer</p>
+
+      <!-- Technologies -->
+      <p class="mb-3"><strong>Technologies:</strong> Java, Spring Boot, PHP, Oracle, MySQL, Nginx, Apache Tomcat, Jira, Bitbucket</p>
+      <!-- Link Button -->
+      <a href="https://play.google.com/store/apps/details?id=com.konasl.nagad" target="_blank" class="inline-block bg-blue-500 hover:bg-blue-600 px-5 py-2 rounded-lg font-medium text-white transition-colors duration-300">
+        View Application
+      </a>
+    </div>
+  </div>
+
+  <div class="relative bg-gradient-to-br from-slate-800/80 to-slate-900/70 p-6 rounded-xl border-l-4 border-blue-500 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col md:flex-row gap-4">
+
+    <!-- Logo -->
+    <div class="flex-shrink-0 w-24 h-24 md:w-28 md:h-28 bg-slate-700/40 rounded-lg flex items-center justify-center">
+      <img src="./project-logos/rocket.webp" alt="Rocket Logo" class="w-28 h-28 md:w-28 md:h-28 object-contain rounded-lg">
+    </div>
+    
+    <!-- Content -->
+    <div class="flex-1">
+      <!-- Header: Project Name -->
+      <h3 class="text-xl font-bold mb-1 text-white">Rocket – Mobile Financial Services</h3>
+      
+      <!-- Duration & Company -->
+      <p class="text-sm text-blue-300 mb-3">2019 – 2022 | Dutch Bangla Bank PLC</p>
+      
+      <!-- Project Description -->
+      <p class="text-gray-200 mb-4">
+        Rocket is one of Bangladesh’s largest Mobile Financial Services (MFS) platforms, serving millions of users nationwide. I contributed extensively to the design, development, and integration of core financial services, including Bill Payment, Funds Transfer, Inter-Bank Transfer, Pull Money from Credit Cards, Merchant Payment, and PIN Reset functionalities.
+
+        A major part of my responsibility involved integrating thousands of bill payment clients into Rocket’s ecosystem. This included some of the most critical national services such as DESCO, DPDC, BREB, NESCO, WZPDCL, DWASA, KWASA, Titas Gas, Bangladesh Bank, and many others, ensuring secure, reliable, and high-throughput transaction processing.
+
+        I also worked on inter-bank transfer integrations, enabling seamless fund movement between Rocket and multiple commercial banks, including Bengal Bank, Dhaka Bank, and Mutual Trust Bank. The overall system was engineered to handle massive transaction volumes, with a strong emphasis on performance optimization, fault tolerance, and security to support millions of daily users without service disruption.
+      </p>
+      
+      <!-- Role -->
+      <p class="mb-2"><strong>Role:</strong> Architecture Designer & Developer</p>
+
+      <!-- Technologies -->
+      <p class="mb-3"><strong>Technologies:</strong> Java, Spring Boot, REST, SOAP, Oracle DB, WebLogic, Tomcat, SVN</p>
+      <!-- Link Button -->
+      <a href="https://play.google.com/store/apps/details?id=com.dbbl.mbs.apps.main" target="_blank" class="inline-block bg-blue-500 hover:bg-blue-600 px-5 py-2 rounded-lg font-medium text-white transition-colors duration-300">
+        View Application
+      </a>
+    </div>
+  </div>
+
+  <div class="relative bg-gradient-to-br from-slate-800/80 to-slate-900/70 p-6 rounded-xl border-l-4 border-blue-500 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col md:flex-row gap-4">
+
+    <!-- Logo -->
+    <div class="flex-shrink-0 w-24 h-24 md:w-28 md:h-28 bg-slate-700/40 rounded-lg flex items-center justify-center">
+      <img src="./project-logos/dbbl.jpeg" alt="Rocket Logo" class="w-28 h-28 md:w-28 md:h-28 object-contain rounded-lg">
+    </div>
+    
+    <!-- Content -->
+    <div class="flex-1">
+      <!-- Header: Project Name -->
+      <h3 class="text-xl font-bold mb-1 text-white">DBBL Agent Banking</h3>
+      
+      <!-- Duration & Company -->
+      <p class="text-sm text-blue-300 mb-3">2019 – 2022 | Dutch Bangla Bank PLC</p>
+      
+      <!-- Project Description -->
+      <p class="text-gray-200 mb-4">
+        The Agent Banking System of Dutch-Bangla Bank Limited (DBBL) is a branchless banking platform that serves customers through a nationwide network of authorized agents, enabling financial inclusion at scale. I contributed to the development and maintenance of the Bill Payment module, ensuring reliable processing of customer payments through agent channels.
+
+        In addition, I worked on fund transfer integrations between Rocket (MFS) and the Agent Banking system, enabling seamless movement of funds across platforms. My role involved enhancing service stability, supporting ongoing maintenance, and ensuring smooth interoperability between systems while handling real-world transactional workloads.
+      </p>
+      
+      <!-- Role -->
+      <p class="mb-2"><strong>Role:</strong> Developer</p>
+
+      <!-- Technologies -->
+      <p class="mb-3"><strong>Technologies:</strong> Java, SOAP, Oracle DB, Tomcat, SVN</p>
+      <!-- Link Button -->
+      <span class="inline-block bg-slate-700 text-slate-200 px-4 py-2 rounded-lg text-sm">
+        🔒 Internal Banking System
+      </span>
+
+    </div>
+  </div>
+
+  <div class="relative bg-gradient-to-br from-slate-800/80 to-slate-900/70 p-6 rounded-xl border-l-4 border-blue-500 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col md:flex-row gap-4">
+
+    <!-- Logo -->
+    <div class="flex-shrink-0 w-24 h-24 md:w-28 md:h-28 bg-slate-700/40 rounded-lg flex items-center justify-center">
+      <img src="./project-logos/nexuspay.webp" alt="Rocket Logo" class="w-28 h-28 md:w-28 md:h-28 object-contain rounded-lg">
+    </div>
+    
+    <!-- Content -->
+    <div class="flex-1">
+      <!-- Header: Project Name -->
+      <h3 class="text-xl font-bold mb-1 text-white">NexusPay - A Mobile Wallet</h3>
+      
+      <!-- Duration & Company -->
+      <p class="text-sm text-blue-300 mb-3">2019 – 2022 | Dutch Bangla Bank PLC</p>
+      
+      <!-- Project Description -->
+      <p class="text-gray-200 mb-4">
+        NexusPay is a mobile wallet application owned by Dutch Bangla Bank Limited (DBBL) that enables customers to perform a wide range of banking and financial activities through a single digital platform. The application provides seamless access to services across multiple customer accounts, focusing on convenience, security, and real-time transaction processing.
+
+        I contributed to the development and enhancement of the Bill Payment and Mobile Top-Up modules, ensuring reliable integration with utility service providers and telecom operators. My work involved building and maintaining backend services that handled high transaction volumes while maintaining consistency, fault tolerance, and performance across the platform.
+      </p>
+      
+      <!-- Role -->
+      <p class="mb-2"><strong>Role:</strong> Developer</p>
+
+      <!-- Technologies -->
+      <p class="mb-3"><strong>Technologies:</strong> Java, REST, SOAP, Oracle DB, Tomcat, SVN</p>
+      <!-- Link Button -->
+      <a href="https://play.google.com/store/apps/details?id=com.dbbl.nexus.pay" target="_blank" class="inline-block bg-blue-500 hover:bg-blue-600 px-5 py-2 rounded-lg font-medium text-white transition-colors duration-300">
+        View Application
+      </a>
+    </div>
+  </div>
+
+  <div class="relative bg-gradient-to-br from-slate-800/80 to-slate-900/70 p-6 rounded-xl border-l-4 border-blue-500 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col md:flex-row gap-4">
+
+    <!-- Logo -->
+    <div class="flex-shrink-0 w-24 h-24 md:w-28 md:h-28 bg-slate-700/40 rounded-lg flex items-center justify-center">
+      <img src="./project-logos/ziau.jpeg" alt="Rocket Logo" class="w-28 h-28 md:w-28 md:h-28 object-contain rounded-lg">
+    </div>
+    
+    <!-- Content -->
+    <div class="flex-1">
+      <!-- Header: Project Name -->
+      <h3 class="text-xl font-bold mb-1 text-white">Mobile Game Development</h3>
+      
+      <!-- Duration & Company -->
+      <p class="text-sm text-blue-300 mb-3">2017 – 2019 | ZIAU</p>
+      
+      <p class="text-gray-200 mb-4">
+        This project represents a collection of mobile action and casual games developed for Android platforms. 
+        I worked as a core member of the development team, contributing to gameplay mechanics, performance optimization, 
+        SDK integrations, and production deployments. The games were designed for smooth cross-device performance and 
+        monetization through ads and in-app purchases.
+      </p>
+
+      <!-- Key Contributions -->
+      <ul class="list-disc list-inside text-sm space-y-1 mb-4">
+        <li>Developed and optimized gameplay features for multiple mobile games</li>
+        <li>Integrated analytics, ads, and in-app purchase systems</li>
+        <li>Ensured crash monitoring and performance stability in production</li>
+        <li>Participated in release management and post-launch support</li>
+      </ul>
+
+      
+      <!-- Role -->
+      <p class="mb-2"><strong>Role:</strong> Developer</p>
+
+      <!-- Technologies -->
+      <p class="mb-3"><strong>Technologies:</strong> Cocos2D-X (C++ & JS), SDKBox (Google Analytics, AdMob, In-App Purchase), 
+      Crashlytics, Git</p>
+      <!-- Application Links -->
+      <div class="flex flex-wrap gap-3">
+        <a href="https://play.google.com/store/apps/details?id=com.ziau.elfcity" target="_blank" class="inline-block bg-blue-500 hover:bg-blue-600 px-5 py-2 rounded-lg font-medium text-white transition-colors duration-300">
+          Dragon Battle
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.tappocket.dragoncastle" target="_blank" class="inline-block bg-blue-500 hover:bg-blue-600 px-5 py-2 rounded-lg font-medium text-white transition-colors duration-300">
+          Dragon Castle
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.fpg.monsterbattle" target="_blank" class="inline-block bg-blue-500 hover:bg-blue-600 px-5 py-2 rounded-lg font-medium text-white transition-colors duration-300">
+          Monster Battle
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+
+
+
+
+<!-- FOOTER -->
+<footer class="text-center py-5 text-gray-500 text-sm">
+  © 2026 Iftekher Mahmud — All rights reserved
+</footer>
+
+<!-- JS -->
+<script>
+  // Mobile menu toggle
+/*const btn = document.getElementById('menuBtn');
+const menu = document.getElementById('mobileMenu');
+btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+
+// Smooth scroll for mobile menu (anchors only)
+document.querySelectorAll('#mobileMenu a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const href = link.getAttribute('href');
+
+    if (href.startsWith('#')) {
+      // Same-page anchor → smooth scroll
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    }
+    // Always close mobile menu
+    menu.classList.add('hidden');
+  });
+});*/
+
+  const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('mobileNavOverlay');
+
+  function openMenu() {
+    menu.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+
+    requestAnimationFrame(() => {
+      menu.classList.remove('-translate-y-4', 'opacity-0');
+      menu.classList.add('translate-y-0', 'opacity-100');
+    });
+  }
+
+  function closeMenu() {
+    menu.classList.add('-translate-y-4', 'opacity-0');
+    menu.classList.remove('translate-y-0', 'opacity-100');
+
+    setTimeout(() => {
+      menu.classList.add('hidden');
+      overlay.classList.add('hidden');
+    }, 300);
+  }
+
+  btn.addEventListener('click', () => {
+    if (menu.classList.contains('hidden')) {
+      openMenu();
+    } else {
+      closeMenu();
+    }
+  });
+
+  overlay.addEventListener('click', closeMenu);
+
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
+
+
+  // STAR ANIMATION
+  const canvas = document.getElementById('starCanvas');
+  const ctx = canvas.getContext('2d');
+
+  let stars = [];
+  let shootingStars = [];
+const numStars = 1000; // dense sky
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+// Initialize stars
+function initStars() {
+  stars = [];
+  for (let i = 0; i < numStars; i++) {
+    stars.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.5 + 0.3,
+      baseAlpha: Math.random() * 0.7 + 0.3,
+      alphaOffset: Math.random() * Math.PI * 2,
+      flickerSpeed: Math.random() * 0.02 + 0.01,
+      glow: Math.random() * 5 + 2
+    });
+  }
+}
+
+// Initialize shooting star
+function initShootingStar() {
+  shootingStars.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height / 2,
+    length: Math.random() * 300 + 150,
+    speedX: Math.random() * 12 + 8,
+    speedY: Math.random() * 4 + 2, // slight diagonal
+    alpha: 1,
+    fadeRate: Math.random() * 0.02 + 0.015
+  });
+}
+
+function drawStars(time) {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Draw twinkling stars
+  stars.forEach(s => {
+    const alpha = s.baseAlpha + Math.sin(time * s.flickerSpeed + s.alphaOffset) * 0.5 * s.baseAlpha;
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255,255,255,${alpha})`;
+    ctx.shadowBlur = s.glow;
+    ctx.shadowColor = 'white';
+    ctx.fill();
+  });
+
+  // Draw shooting stars
+  shootingStars.forEach((s, idx) => {
+    ctx.beginPath();
+    ctx.moveTo(s.x, s.y);
+    ctx.lineTo(s.x - s.length, s.y - s.length * 0.1); // diagonal streak
+    ctx.strokeStyle = `rgba(255,255,255,${s.alpha})`;
+    ctx.lineWidth = 2;
+    ctx.shadowBlur = 15;
+    ctx.shadowColor = 'white';
+    ctx.stroke();
+
+    s.x += s.speedX;
+    s.y += s.speedY;
+    s.alpha -= s.fadeRate;
+
+    if (s.alpha <= 0 || s.x - s.length > canvas.width || s.y > canvas.height) {
+      shootingStars.splice(idx, 1);
+    }
+  });
+
+  // Occasionally spawn new shooting star
+  if (Math.random() < 0.015) initShootingStar();
+
+  requestAnimationFrame(() => drawStars(performance.now() / 1000));
+}
+
+initStars();
+drawStars();
+</script>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Iftekher Mahmud",
+    "url": "https://yourdomain.com/",
+    "jobTitle": "Senior Software Engineer",
+    "sameAs": [
+      "https://www.linkedin.com/in/your-profile",
+      "https://github.com/your-username"
+    ],
+    "knowsAbout": [
+      "Java",
+      "Spring Boot",
+      "Fintech",
+      "ERP Systems",
+      "Mobile Financial Services",
+      "Backend Development"
+    ]
+  }
+</script>
+
+
+</body>
+</html>

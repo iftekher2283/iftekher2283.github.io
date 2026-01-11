@@ -27,57 +27,77 @@
 
   <!-- Global Background (responsive) -->
   <style>
-    body {
-  background-image: url("./assets/bg-desktop.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* keep fixed for desktop */
+    /* Remove background from body */
+body {
   margin: 0;
+  overflow-x: hidden;
+  position: relative;
+  scroll-behavior: smooth;
 }
 
-/* Overlay */
-body::before {
-  content: '';
+/* Fixed background container */
+#bgContainer {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(2, 6, 23, 0.5);
-  z-index: -1;
+  background-image: url("./assets/bg-desktop.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -2; /* behind everything */
 }
 
 /* Mobile background */
 @media (max-width: 768px) {
-  body {
+  #bgContainer {
     background-image: url("./assets/bg-mobile.jpg");
-    background-attachment: scroll; /* use scroll for mobile to prevent lag */
-  }
-
-  body::before {
-    background: rgba(2,6,23,0.3); /* lighter overlay */
+    background-size: cover;
+    background-position: center;
   }
 }
 
+/* Overlay layer for tint */
+#bgOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(2,6,23,0.5);
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  #bgOverlay {
+    background: rgba(2,6,23,0.3); /* lighter overlay for mobile */
+  }
+}
+
+/* Star canvas stays fixed above overlay */
 #starCanvas {
-  position: fixed; /* keep fixed for all devices */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: -1;
+  z-index: -1; /* between overlay and content if needed */
 }
+
 
 
   </style>
 </head>
 <body class="text-gray-200 font-sans">
 
+  <div id="bgContainer"></div>
+  <div id="bgOverlay"></div>
+
   <!-- STAR CANVAS -->
   <canvas id="starCanvas"></canvas>
 
+ <div id="mainContent">
   <!-- NAVBAR (Fixed with blackish transparent background) -->
   <header class="fixed top-0 left-0 w-full bg-black/60 z-50">
     <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
@@ -731,17 +751,19 @@ mx-auto sm:mx-0 flex-shrink-0"
 <footer class="text-center py-5 text-gray-500 text-sm">
   © 2026 Iftekher Mahmud — All rights reserved
 </footer>
+</div>
 
 <!-- JS -->
 <script>
-  const btn = document.getElementById('menuBtn');
+// Mobile menu toggle
+const btn = document.getElementById('menuBtn');
   const menu = document.getElementById('mobileMenu');
   const overlay = document.getElementById('mobileNavOverlay');
 
   function openMenu() {
+    if (!menu) return;
     menu.classList.remove('hidden');
-    overlay.classList.remove('hidden');
-
+    if (overlay) overlay.classList.remove('hidden');
     requestAnimationFrame(() => {
       menu.classList.remove('-translate-y-4', 'opacity-0');
       menu.classList.add('translate-y-0', 'opacity-100');
@@ -749,30 +771,47 @@ mx-auto sm:mx-0 flex-shrink-0"
   }
 
   function closeMenu() {
+    if (!menu) return;
     menu.classList.add('-translate-y-4', 'opacity-0');
     menu.classList.remove('translate-y-0', 'opacity-100');
-
     setTimeout(() => {
       menu.classList.add('hidden');
-      overlay.classList.add('hidden');
+      if (overlay) overlay.classList.add('hidden');
     }, 300);
   }
 
-  btn.addEventListener('click', () => {
-    if (menu.classList.contains('hidden')) {
-      openMenu();
-    } else {
-      closeMenu();
-    }
-  });
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      if (menu.classList.contains('hidden')) openMenu();
+      else closeMenu();
+    });
+  }
 
-  overlay.addEventListener('click', closeMenu);
+  if (overlay) overlay.addEventListener('click', closeMenu);
 
-  menu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      closeMenu();
+  if (menu) {
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+  }
+
+  // --------- Smooth Scrolling for Nav Links ---------
+  const navLinks = document.querySelectorAll('header nav a, #mobileMenu a');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      const href = link.getAttribute('href');
+
+      // Only handle internal anchors
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      }
     });
   });
+
+
 
   // STAR ANIMATION
   const canvas = document.getElementById('starCanvas');

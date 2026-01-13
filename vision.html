@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Iftekher Mahmud | Software Engineer | Online CV & Portfolio</title>
+
+  <meta name="description" content="Iftekher Mahmud is a Senior Software Engineer specializing in Java, Spring Boot, Fintech, ERP, and Mobile Financial Services. View his online CV, experience, and key projects." />
+  <meta name="keywords" content="Iftekher Mahmud, Iftekher, Mahmud, online cv, cv, software engineer, java developer, fintech engineer, portfolio" />
+  <link rel="canonical" href="https://iftekher2283.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Iftekher Mahmud | Software Engineer | Online CV" />
+  <meta property="og:description" content="Lead Software Engineer with expertise in Java, Fintech, ERP systems, and Mobile Financial Services. View online CV and portfolio." />
+  <meta property="og:url" content="https://iftekher2283.github.io/" />
+  <meta property="og:image" content="https://iftekher2283.github.io/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Iftekher Mahmud | Software Engineer | Online CV" />
+  <meta name="twitter:description" content="Explore the online CV and portfolio of Iftekher Mahmud, Senior Software Engineer." />
+  <meta name="twitter:image" content="https://iftekher2283.github.io/assets/og-image.jpg" />
+
+  <link rel="icon" href="./assets/favicon-2.png" type="image/png">
+
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Global Background (responsive) -->
+  <style>
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      position: relative;
+      scroll-behavior: smooth;
+      background-color: #000000;
+    }
+
+    /* Fixed background container */
+    #bgContainer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("./assets/bg-desktop.jpg");
+      background-size: cover;
+      background-position: center;
+      z-index: -2; /* behind everything */
+    }
+
+    /* Mobile background */
+    @media (max-width: 768px) {
+      #bgContainer {
+        background-image: url("./assets/bg-mobile.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+    }
+
+    /* Overlay layer for tint */
+    #bgOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(2,6,23,0.5);
+      z-index: -1;
+    }
+
+    @media (max-width: 768px) {
+      #bgOverlay {
+        background: rgba(2,6,23,0.3); /* lighter overlay for mobile */
+      }
+    }
+
+    /* Star canvas stays fixed above overlay */
+    #starCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1; /* between overlay and content if needed */
+    }
+  </style>
+</head>
+
+<body class="text-gray-200 font-sans">
+
+  <div id="bgContainer"></div>
+  <div id="bgOverlay"></div>
+  <!-- STAR CANVAS -->
+  <canvas id="starCanvas"></canvas>
+
+  <div id="mainContent">
+    <!-- NAVBAR (Fixed with blackish transparent background) -->
+    <header class="fixed top-0 left-0 w-full bg-black/60 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+        <div>
+          <h1 class="text-2xl font-bold">Iftekher Mahmud</h1>
+          <p class="text-sm text-gray-200">Software Engineer & Educator</p>
+        </div>
+
+        <nav class="hidden md:flex gap-8 text-sm">
+          <a href="index.html" class="hover:text-white">Home</a>
+          <!-- <a href="index.html#contact" class="hover:text-white">Contact</a> -->
+          <!-- <a href="index.html#about" class="hover:text-white">About</a> -->
+          <a href="index.html#skills" class="hover:text-white">Skills</a>
+          <a href="index.html#education" class="hover:text-white">Educations</a>
+          <a href="index.html#experience" class="hover:text-white">Experiences</a>
+          <a href="projects.html" class="hover:text-white">Projects</a>
+          <a href="index.html#research" class="hover:text-white">Research</a>
+          <a href="index.html#courses" class="hover:text-white">Teaching</a>
+          <!-- <a href="vision.html" class="hover:text-white">Vision</a> -->
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="menuBtn" class="md:hidden text-2xl">☰</button>
+      </div>
+    </header>
+
+    <!-- MOBILE NAV OVERLAY -->
+    <div id="mobileNavOverlay"
+    class="fixed inset-0 bg-black/50 z-40 hidden md:hidden">
+  </div>
+
+<!-- MOBILE DRAWER MENU -->
+<div id="mobileMenu"
+class="fixed top-[88px] left-0 w-full bg-slate-900 z-50
+hidden md:hidden px-6 py-6 space-y-4
+transform -translate-y-4 opacity-0
+transition-all duration-300">
+<a href="index.html" class="block text-lg">Home</a>
+<!-- <a href="index.html#contact" class="block text-lg">Contact</a> -->
+<!-- <a href="index.html#about" class="block text-lg">About</a> -->
+<a href="index.html#skills" class="block text-lg">Skills</a>
+<a href="index.html#education" class="block text-lg">Education</a>
+<a href="index.html#experience" class="block text-lg">Experience</a>
+<a href="projects.html" class="block text-lg">Projects</a>
+<a href="index.html#research" class="block text-lg">Research</a>
+<a href="index.html#courses" class="block text-lg">Teaching</a>
+<!-- <a href="vision.html" class="block text-lg">Vision</a> -->
+</div>
+
+
+
+<!-- HERO -->
+<section class="max-w-7xl mx-auto px-6 py-10 mt-32">
+  <h2 class="text-4xl font-bold mb-4">Vision: A Digital Nation for True Democracy</h2>
+  <p class="text-gray-200 max-w-3xl">
+    Re-distributing power to citizens through accountable, transparent, and technology-driven governance
+  </section>
+
+<!-- VISION SECTION -->
+
+<!-- <section class="max-w-7xl mx-auto px-6 py-16 space-y-16"> -->
+
+  <!-- WHY THIS VISION -->
+  <section class="max-w-7xl mx-auto px-6 py-16 space-y-12">
+
+    <!-- WHY THIS VISION -->
+    <div class="bg-slate-900/80 backdrop-blur rounded-2xl p-8 shadow-lg space-y-6">
+      <h2 class="text-3xl font-semibold">Why This Vision Is Necessary</h2>
+
+      <p class="text-gray-300 leading-relaxed">
+        Constitutions declare that governments and public officials exist to serve citizens. 
+        In reality, especially in developing democracies like Bangladesh, citizens exercise 
+        their power only through periodic elections. Once in office, representatives and 
+        officials often act with little accountability, reducing democracy to a procedural formality.
+      </p>
+
+      <p class="text-gray-300 leading-relaxed">
+        Permanent employees, local authorities, and elected representatives may lose direct 
+        connection with citizens’ needs, creating a system where decisions are disconnected 
+        from the public interest.
+      </p>
+
+      <p class="text-gray-300 leading-relaxed">
+        This Digital Nation vision addresses these gaps by designing a centralized, citizen-centric 
+        platform that enforces accountability, transparency, and continuous democratic participation, 
+        extending the power of the people beyond election day.
+      </p>
+    </div>
+
+    <!-- CORE IDEA -->
+    <div class="bg-slate-900/80 backdrop-blur rounded-2xl p-8 shadow-lg space-y-6">
+      <h2 class="text-3xl font-semibold">The Core Idea of the Digital Nation</h2>
+
+      <p class="text-gray-300 leading-relaxed">
+        The Digital Nation is a centralized system where every citizen has a secure digital profile 
+        and can participate directly in governance, policy decisions, and public services.
+      </p>
+
+      <p class="text-gray-300 leading-relaxed">
+        The system is designed in **13 progressive phases**, gradually extending from secure election 
+        management to a fully integrated national ecosystem covering governance, citizen services, 
+        economy, education, healthcare, utilities, environment, and strategic innovation.
+      </p>
+    </div>
+
+    <!-- PHASE SUMMARY -->
+    <div class="bg-slate-900/80 backdrop-blur rounded-2xl p-8 shadow-lg space-y-6">
+      <h2 class="text-3xl font-semibold">Phase-by-Phase Implementation (Summary)</h2>
+
+      <ul class="list-disc list-inside space-y-2 text-gray-300">
+        <li><strong>Phase 1:</strong> Election Management System & Secure Voter Accounts</li>
+        <li><strong>Phase 2:</strong> Voter-Centric Decision Making & Polling System</li>
+        <li><strong>Phase 3:</strong> Continuous Monitoring & Accountability of Officials</li>
+        <li><strong>Phase 4:</strong> Full Jurisdiction Module Integration</li>
+        <li><strong>Phase 5:</strong> Citizen Services Expansion & Anti-Corruption</li>
+        <li><strong>Phase 6:</strong> Economic Governance & Budget Polling</li>
+        <li><strong>Phase 7:</strong> Comprehensive Medical Services</li>
+        <li><strong>Phase 8:</strong> Education Management & Oversight</li>
+        <li><strong>Phase 9:</strong> Career & Employment Integration</li>
+        <li><strong>Phase 10:</strong> Utility Management & Monitoring</li>
+        <li><strong>Phase 11:</strong> Transportation & Communication Integration</li>
+        <li><strong>Phase 12:</strong> Environmental & Sustainability Governance</li>
+        <li><strong>Phase 13:</strong> Strategic, Innovation & Security Governance</li>
+      </ul>
+    </div>
+
+    <!-- LONG-TERM IMPACT -->
+    <div class="bg-slate-900/80 backdrop-blur rounded-2xl p-8 shadow-lg space-y-6">
+      <h2 class="text-3xl font-semibold">Long-Term Impact</h2>
+
+      <p class="text-gray-300 leading-relaxed">
+        The Digital Nation transforms citizens from passive voters to active, continuous stakeholders. 
+        Every decision, service, and initiative is verified, monitored, and accountable, fulfilling the 
+        true promise of democracy.
+      </p>
+
+      <p class="text-gray-300 leading-relaxed">
+        By the end of these 13 phases, the system becomes a fully integrated, transparent, and sustainable 
+        national ecosystem where governance, public services, economy, education, healthcare, utilities, 
+        environment, and strategic development operate seamlessly under citizen oversight.
+      </p>
+    </div>
+
+    <!-- DETAILED IMPLEMENTATION -->
+    <div class="space-y-12">
+
+      <h2 class="text-3xl font-semibold text-center text-white mb-6">Detailed Implementation</h2>
+
+
+
+      <div class="space-y-8">
+
+
+
+        <!-- Phase 1 -->
+        <div class="bg-slate-900/70 backdrop-blur-lg rounded-2xl p-5 shadow-xl mb-6 border border-orange-500">
+          <!-- Collapsed Header -->
+          <button class="w-full text-left flex justify-between items-center py-3 px-4 bg-orange-600/80 hover:bg-orange-700/90 rounded-md focus:outline-none phase-toggle">
+            <div>
+              <h3 class="text-lg font-bold text-white">Phase 1: National Digital Election System (NDES)</h3>
+              <p class="text-sm mt-1">
+                <strong>Build a secure, transparent digital voting platform where every Bangladeshi voter can cast votes online or at assisted booths.</strong>
+              </p>
+            </div>
+            <span class="text-2xl text-white">+</span>
+          </button>
+
+          <!-- Expanded Content -->
+          <div class="phase-content hidden mt-4 text-gray-300 space-y-4">
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">🎯 Objective</h4>
+              <p>
+                Deliver a fully digital election system that guarantees secure vote casting, transparency, auditability, and real-time monitoring for all stakeholders.
+              </p>
+
+              <div class="mt-2 text-sm text-gray-200 space-y-1">
+                <p><strong>Key Features:</strong> Online & assisted voting, real-time results, voter authentication, transparency dashboards.</p>
+                <p><strong>Impacted Stakeholders:</strong> Voters, political parties, candidates, election commission, observers.</p>
+                <p><strong>Management:</strong> Election Commission oversight with multi-level monitoring and auditing panels.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">⚙️ System Modules & Components</h4>
+              <ul class="list-disc list-inside ml-6 space-y-2">
+                <li><strong>Voter Management System (VMS):</strong> Automated voter profiles from NID, authentication, dashboard for election info, eligibility, past voting history.</li>
+                <li><strong>Political Party & Candidate Module:</strong> Party & candidate registration, profile verification, public manifesto display, integration with EC approval workflows.</li>
+                <li><strong>Election Management Panel (EMP):</strong> EC hierarchy management, scheduling, observer assignment, complaints, appeals, and result publishing.</li>
+                <li><strong>Secure Voting Platform (SVP):</strong> Online & assisted voting, encrypted ballots, biometric/OTP authentication, vote confirmation tokens, blockchain-backed ledger.</li>
+                <li><strong>Live Result Dashboard (LRD):</strong> Real-time aggregation, role-based visibility, public, party, and observer dashboards.</li>
+                <li><strong>Monitoring & Transparency Panel (MTP):</strong> Centralized monitoring, alerts for anomalies, integration with complaint system, audit trail management.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">🧮 Data Flow Summary</h4>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>Voter Login → Authentication</li>
+                <li>Election List → Display eligible elections</li>
+                <li>Vote Cast → User confirms via 2FA</li>
+                <li>Encrypted Vote → Blockchain ledger</li>
+                <li>Counting & Publishing → Dashboards and public stats</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">📊 Transparency & Trust</h4>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>Open-source, publicly auditable codebase</li>
+                <li>Public statistics API for independent audit</li>
+                <li>Observers can export anonymized datasets</li>
+                <li>Real-time verification of votes vs registered voters</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="bg-slate-900/70 backdrop-blur-lg rounded-2xl p-5 shadow-xl mb-6 border border-orange-500">
+          <!-- Collapsed Header -->
+          <button class="w-full text-left flex justify-between items-center py-3 px-4 bg-orange-600/80 hover:bg-orange-700/90 rounded-md focus:outline-none phase-toggle">
+            <div>
+              <h3 class="text-lg font-bold text-white">Phase 2: Participatory Decision-Making System</h3>
+              <p class="text-sm mt-1">
+                <strong>Enable citizens to directly approve, reject, or modify government proposals, ensuring all initiatives reflect their will.</strong>
+              </p>
+            </div>
+            <span class="text-2xl text-white">+</span>
+          </button>
+
+          <!-- Expanded Content -->
+          <div class="phase-content hidden mt-4 text-gray-300 space-y-4">
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">🎯 Objective</h4>
+              <p>
+                Establish a system where all governmental initiatives require voter approval, guaranteeing that elected representatives act only as facilitators and not unilateral decision-makers.
+              </p>
+              <div class="mt-2 text-sm text-gray-200 space-y-1">
+                <p><strong>Key Features:</strong> Poll-based decision approval, initiative tracking, threshold-based execution, automated notifications, secure voter participation.</p>
+                <p><strong>Impacted Stakeholders:</strong> Citizens, parliament members, local government authorities, Election Commission, observers.</p>
+                <p><strong>Management:</strong> EC facilitates poll creation, monitors results, and ensures execution aligns with voter decisions. Automated system enforces thresholds.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">⚙️ System Modules & Components</h4>
+              <ul class="list-disc list-inside ml-6 space-y-2">
+                <li><strong>Initiative Submission & Proposal Module:</strong> Government authorities submit proposals digitally; includes summary, objectives, and supporting data for public review.</li>
+                <li><strong>Poll Generation Engine:</strong> Automatically creates polls for each initiative; sets time windows, voting thresholds, and integrates with authentication systems.</li>
+                <li><strong>Voter Dashboard:</strong> Displays initiatives requiring action, voting instructions, historical participation, and real-time status of proposals.</li>
+                <li><strong>Threshold Management:</strong> Tracks voter participation and approval percentages. Automatically flags proposals not meeting predefined thresholds.</li>
+                <li><strong>Result Verification & Execution:</strong> Secure tallying of votes; only proposals meeting thresholds are executed; proposals below thresholds require amendment or resubmission.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">🧮 Data Flow Summary</h4>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>Authority submits initiative → System generates poll → Voters cast votes</li>
+                <li>Votes encrypted & securely stored → Real-time monitoring of participation & threshold</li>
+                <li>Proposal approved? → Execute initiative; Proposal rejected? → Notify authority to amend or resubmit</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">📊 Transparency & Trust</h4>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>All polls auditable by EC and observers</li>
+                <li>Voter participation statistics publicly available (without revealing individual votes)</li>
+                <li>Automated threshold enforcement ensures fairness and compliance</li>
+                <li>Full traceability of proposal lifecycle from submission to execution</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 3 -->
+        <div class="bg-slate-900/70 backdrop-blur-lg rounded-2xl p-5 shadow-xl mb-6 border border-orange-500">
+          <!-- Collapsed Header -->
+          <button class="w-full text-left flex justify-between items-center py-3 px-4 bg-orange-600/80 hover:bg-orange-700/90 rounded-md focus:outline-none phase-toggle">
+            <div>
+              <h3 class="text-lg font-bold text-white">Phase 3: Continuous Implementation Monitoring</h3>
+              <p class="text-sm mt-1">
+                <strong>Track progress of initiatives in real-time, allowing citizens to provide feedback and ensure accountability of responsible officials.</strong>
+              </p>
+            </div>
+            <span class="text-2xl text-white">+</span>
+          </button>
+
+          <!-- Expanded Content -->
+          <div class="phase-content hidden mt-4 text-gray-300 space-y-4">
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">🎯 Objective</h4>
+              <p>
+                Create a real-time monitoring system where all governmental initiatives are tracked, and citizens can continuously evaluate satisfaction, ensuring accountability at all levels.
+              </p>
+              <div class="mt-2 text-sm text-gray-200 space-y-1">
+                <p><strong>Key Features:</strong> Progress tracking, continuous polling for citizen satisfaction, automated alerts for underperformance, multi-threshold action system, punishments for repeated failure.</p>
+                <p><strong>Impacted Stakeholders:</strong> Citizens, government officials, local representatives, ministers, parliament members.</p>
+                <p><strong>Management:</strong> EC and oversight authorities manage dashboards, alerts, investigations, and enforcement of accountability policies.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">⚙️ System Modules & Components</h4>
+              <ul class="list-disc list-inside ml-6 space-y-2">
+                <li><strong>Progress Tracking Module:</strong> Tracks initiative progress with linked responsible officials and departmental updates.</li>
+                <li><strong>Continuous Feedback Platform:</strong> Citizens can submit satisfaction ratings for initiatives at regular intervals.</li>
+                <li><strong>Threshold Management Engine:</strong> Defines multiple action levels based on dissatisfaction percentages:
+                  <ul class="list-disc list-inside ml-6">
+                    <li>20% dissatisfaction → alert responsible officials</li>
+                    <li>30% → public showcase and intervention</li>
+                    <li>40% → initiate investigation and corrective actions</li>
+                    <li>50% → reassign or halt project; enforce disciplinary actions</li>
+                  </ul>
+                </li>
+                <li><strong>Punishment & Enforcement Module:</strong> Implements policies for repeated underperformance (e.g., suspension after 3–5 violations, permanent disqualification for future responsibility).</li>
+                <li><strong>Audit & Reporting Panel:</strong> Detailed dashboards showing citizen feedback trends, official performance, and historical compliance data.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">🧮 Data Flow Summary</h4>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>Official updates initiative progress → System logs data → Citizens provide feedback via polls</li>
+                <li>Threshold engine evaluates dissatisfaction percentages → Automated alerts & actions triggered</li>
+                <li>Investigations and corrective measures recorded → Dashboards updated for transparency</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">📊 Transparency & Trust</h4>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>All progress data and citizen feedback auditable by EC and oversight authorities</li>
+                <li>Automated action triggers maintain impartiality and prevent manipulation</li>
+                <li>Dashboards provide historical trends, allowing citizens to track official accountability over time</li>
+                <li>Reports and investigations are securely logged for full traceability</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 4 -->
+        <div class="bg-slate-900/70 backdrop-blur-lg rounded-2xl p-5 shadow-xl mb-6 border border-orange-500">
+          <!-- Collapsed Header -->
+          <button class="w-full text-left flex justify-between items-center py-3 px-4 bg-orange-600/80 hover:bg-orange-700/90 rounded-md focus:outline-none phase-toggle">
+            <div>
+              <h3 class="text-lg font-bold text-white">Phase 4: Full Jurisdiction & Public Case Governance</h3>
+              <p class="text-sm mt-1">
+                <strong>Integrate all law enforcement, courts, and investigative bodies into the digital nation system for streamlined public case management and accountability.</strong>
+              </p>
+            </div>
+            <span class="text-2xl text-white">+</span>
+          </button>
+
+          <!-- Expanded Content -->
+          <div class="phase-content hidden mt-4 text-gray-300 space-y-4">
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">🎯 Objective</h4>
+              <p>
+                Establish a centralized digital framework for jurisdictional governance, enabling citizens to track cases, complaints, and legal processes while holding authorities accountable.
+              </p>
+              <div class="mt-2 text-sm text-gray-200 space-y-1">
+                <p><strong>Key Features:</strong> Case management, law enforcement monitoring, integration of courts, digital complaints, transparency dashboards.</p>
+                <p><strong>Impacted Stakeholders:</strong> Citizens, police, courts, investigative agencies (PBI, RAB, DB, CID), legal authorities.</p>
+                <p><strong>Management:</strong> Ministry of Justice and EC supervise the system with multi-tier dashboards for tracking and audit.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">⚙️ System Modules & Components</h4>
+              <ul class="list-disc list-inside ml-6 space-y-2">
+                <li><strong>Case & Complaint Management Module:</strong> Citizens can file complaints digitally; cases tracked end-to-end, from registration to resolution.</li>
+                <li><strong>Law Enforcement Dashboard:</strong> Police, investigative agencies, and enforcement officers get role-based dashboards showing assigned cases, progress, and alerts.</li>
+                <li><strong>Court Integration:</strong> Courts receive digital case files, track hearings, and update status for public visibility; integrates judgments and rulings.</li>
+                <li><strong>Investigation & Oversight Panel:</strong> Monitors investigative agencies for timely and ethical handling; flags delays or anomalies for review.</li>
+                <li><strong>Transparency & Audit Trail:</strong> Immutable logs of all actions, accessible to EC, judiciary oversight, and public in anonymized form.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">🧮 Data Flow Summary</h4>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>Citizen submits complaint → Case logged in system → Assigned to law enforcement agency</li>
+                <li>Investigation updates → Dashboard reflects progress → Automated alerts for delays or threshold violations</li>
+                <li>Court hearings → Verdicts logged digitally → Citizens notified of updates → Audit trail maintained</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">📊 Transparency & Trust</h4>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>All cases and investigations auditable by EC and judiciary</li>
+                <li>Role-based dashboards ensure authorities cannot bypass process</li>
+                <li>Automated reporting of delays, anomalies, and completed cases</li>
+                <li>Immutable logs maintain accountability and reduce corruption opportunities</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Phase 5 -->
+        <div class="bg-slate-900/70 backdrop-blur-lg rounded-2xl p-5 shadow-xl mb-6 border border-orange-500">
+          <!-- Collapsed Header -->
+          <button class="w-full text-left flex justify-between items-center py-3 px-4 bg-orange-600/80 hover:bg-orange-700/90 rounded-md focus:outline-none phase-toggle">
+            <div>
+              <h3 class="text-lg font-bold text-white">Phase 5: Citizen Services & Anti-Corruption Integration</h3>
+              <p class="text-sm mt-1">
+                <strong>Centralize all key citizen services and embed anti-corruption mechanisms for transparent, accountable service delivery.</strong>
+              </p>
+            </div>
+            <span class="text-2xl text-white">+</span>
+          </button>
+
+          <!-- Expanded Content -->
+          <div class="phase-content hidden mt-4 text-gray-300 space-y-4">
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">🎯 Objective</h4>
+              <p>
+                Provide a unified digital platform for managing essential citizen services while ensuring anti-corruption oversight, reducing bureaucratic delays, and increasing transparency.
+              </p>
+              <div class="mt-2 text-sm text-gray-200 space-y-1">
+                <p><strong>Key Features:</strong> Online service applications, status tracking, document verification, automated approval workflows, anti-corruption monitoring.</p>
+                <p><strong>Impacted Stakeholders:</strong> Citizens, government offices (passport, birth registry, licensing authorities, land offices), anti-corruption commission, oversight authorities.</p>
+                <p><strong>Management:</strong> EC and relevant ministries manage workflows and dashboards; anti-corruption commission receives automated alerts for anomalies or irregularities.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">⚙️ System Modules & Components</h4>
+              <ul class="list-disc list-inside ml-6 space-y-2">
+                <li><strong>Digital Service Portal:</strong> Citizens can apply for passports, birth certificates, licenses, land records, and other services online with real-time tracking.</li>
+                <li><strong>Document Verification Engine:</strong> Automatic verification of submitted documents with government databases, ensuring authenticity and reducing manual errors.</li>
+                <li><strong>Workflow & Approval Module:</strong> Manages multi-step service approvals with automated notifications and alerts to authorities and citizens.</li>
+                <li><strong>Anti-Corruption Monitoring System:</strong> Detects irregularities, unusual delays, or manipulation in service delivery; generates automated alerts for investigation.</li>
+                <li><strong>Citizen Dashboard & Feedback:</strong> Allows citizens to rate services, submit complaints, and view processing status in real time.</li>
+                <li><strong>Analytics & Reporting:</strong> Tracks efficiency, identifies bottlenecks, and provides statistical insights to EC, ministries, and oversight bodies.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">🧮 Data Flow Summary</h4>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>Citizen submits service request → Documents verified → Approval workflow executed → Status updated in dashboard</li>
+                <li>Anomalies detected → Anti-corruption alerts generated → Investigations initiated</li>
+                <li>Feedback recorded → Dashboards updated → Reports generated for oversight</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">📊 Transparency & Trust</h4>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>End-to-end tracking ensures citizens can monitor progress of their requests</li>
+                <li>Automated anti-corruption checks prevent manipulation or undue delays</li>
+                <li>All approvals, rejections, and modifications logged in immutable audit trails</li>
+                <li>Data available for oversight authorities and auditors without compromising privacy</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Phase 6 -->
+        <div class="bg-slate-900/70 backdrop-blur-lg rounded-2xl p-5 shadow-xl mb-6 border border-orange-500">
+          <!-- Collapsed Header -->
+          <button class="w-full text-left flex justify-between items-center py-3 px-4 bg-orange-600/80 hover:bg-orange-700/90 rounded-md focus:outline-none phase-toggle">
+            <div>
+              <h3 class="text-lg font-bold text-white">Phase 6: Economic Governance & Welfare Management</h3>
+              <p class="text-sm mt-1">
+                <strong>Implement a centralized economic governance system allowing citizen participation in budget decisions, taxation oversight, and welfare distribution.</strong>
+              </p>
+            </div>
+            <span class="text-2xl text-white">+</span>
+          </button>
+
+          <!-- Expanded Content -->
+          <div class="phase-content hidden mt-4 text-gray-300 space-y-4">
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">🎯 Objective</h4>
+              <p>
+                Create a fully transparent, citizen-engaged economic governance system where budgets, taxes, and welfare programs are planned, executed, and monitored digitally.
+              </p>
+              <div class="mt-2 text-sm text-gray-200 space-y-1">
+                <p><strong>Key Features:</strong> Citizen polling on budget proposals, tax reporting, welfare distribution tracking, automated alerts for irregularities.</p>
+                <p><strong>Impacted Stakeholders:</strong> Citizens, Ministry of Finance, taxation authorities, social welfare agencies, parliament, local government authorities.</p>
+                <p><strong>Management:</strong> Central oversight by EC and Ministry of Finance; automated dashboards track progress and detect deviations.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">⚙️ System Modules & Components</h4>
+              <ul class="list-disc list-inside ml-6 space-y-2">
+                <li><strong>Budget Proposal & Polling Module:</strong> Authorities submit budget plans → Citizens vote or comment on priorities → Automated threshold rules determine approval.</li>
+                <li><strong>Taxation Management System:</strong> Tracks tax collection, ensures compliance, flags irregularities, provides real-time dashboards for citizens and oversight bodies.</li>
+                <li><strong>Welfare Distribution Module:</strong> Manages allocation of social benefits, tracks disbursements, and ensures transparency via digital receipts and notifications.</li>
+                <li><strong>Automated Alert & Monitoring Engine:</strong> Detects discrepancies in budgets, tax collection, or welfare distribution → Sends alerts to oversight authorities.</li>
+                <li><strong>Citizen Dashboard & Feedback:</strong> Allows citizens to monitor budget usage, submit complaints, or report corruption concerns directly in the system.</li>
+                <li><strong>Analytics & Reporting:</strong> Provides performance reports, trends, and insights for ministries and auditors.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">🧮 Data Flow Summary</h4>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>Authorities submit budget/welfare proposals → System generates polls for citizens → Votes cast and aggregated</li>
+                <li>Approved proposals executed → Taxation & welfare data logged → Dashboards updated in real-time</li>
+                <li>Anomalies detected → Alerts sent → Audit trails maintained for verification</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">📊 Transparency & Trust</h4>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>All budget and welfare activities tracked in real-time</li>
+                <li>Citizen voting and feedback ensures direct participation in governance</li>
+                <li>Immutable audit trails protect against manipulation and corruption</li>
+                <li>Reports accessible to oversight bodies and public without compromising sensitive financial data</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Phase 7 -->
+        <div class="bg-slate-900/70 backdrop-blur-lg rounded-2xl p-5 shadow-xl mb-6 border border-orange-500">
+          <!-- Collapsed Header -->
+          <button class="w-full text-left flex justify-between items-center py-3 px-4 bg-orange-600/80 hover:bg-orange-700/90 rounded-md focus:outline-none phase-toggle">
+            <div>
+              <h3 class="text-lg font-bold text-white">Phase 7: Centralized Medical & Healthcare System</h3>
+              <p class="text-sm mt-1">
+                <strong>Integrate full medical services into the digital nation, enabling centralized health records, service management, and patient-care oversight.</strong>
+              </p>
+            </div>
+            <span class="text-2xl text-white">+</span>
+          </button>
+
+          <!-- Expanded Content -->
+          <div class="phase-content hidden mt-4 text-gray-300 space-y-4">
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">🎯 Objective</h4>
+              <p>
+                Establish a nationwide, secure, and centralized healthcare system to track medical records, improve patient care, and optimize resource allocation while maintaining privacy and transparency.
+              </p>
+              <div class="mt-2 text-sm text-gray-200 space-y-1">
+                <p><strong>Key Features:</strong> Centralized EHR, telemedicine access, hospital & clinic integration, automated alerts for emergencies, healthcare analytics.</p>
+                <p><strong>Impacted Stakeholders:</strong> Citizens, hospitals, clinics, doctors, nurses, health ministry, public health authorities.</p>
+                <p><strong>Management:</strong> Ministry of Health supervises, integrated dashboards track hospital performance, patient outcomes, and resource usage.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">⚙️ System Modules & Components</h4>
+              <ul class="list-disc list-inside ml-6 space-y-2">
+                <li><strong>Electronic Health Record (EHR) Module:</strong> Maintains complete medical history, prescriptions, diagnostics, immunizations, and hospital visits.</li>
+                <li><strong>Hospital & Clinic Integration:</strong> Connects all healthcare providers digitally, enabling real-time patient data sharing while maintaining privacy controls.</li>
+                <li><strong>Telemedicine & Appointment Module:</strong> Enables remote consultations, scheduling, and follow-ups via web or mobile app.</li>
+                <li><strong>Emergency & Alert System:</strong> Automated notifications for critical patients, public health warnings, and hospital resource management.</li>
+                <li><strong>Healthcare Analytics & Reporting:</strong> Tracks disease trends, resource utilization, hospital performance, and public health metrics for authorities.</li>
+                <li><strong>Citizen Health Dashboard:</strong> Individuals can view personal health records, upcoming appointments, vaccination status, and telemedicine sessions.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">🧮 Data Flow Summary</h4>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>Patient registration → Records stored in EHR → Doctors/nurses access relevant info securely</li>
+                <li>Appointments & telemedicine → Patient requests scheduled → Consultations logged digitally</li>
+                <li>Hospital updates → Central dashboard → Health ministry monitors trends & resource allocation</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">📊 Transparency & Trust</h4>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>All medical interactions logged in secure audit trails</li>
+                <li>Patients have full access to their health records</li>
+                <li>Hospitals & clinics monitored for compliance and efficiency</li>
+                <li>Aggregated health analytics available for public health planning without revealing personal data</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Phase 8 -->
+        <div class="bg-slate-900/70 backdrop-blur-lg rounded-2xl p-5 shadow-xl mb-6 border border-orange-500">
+          <!-- Collapsed Header -->
+          <button class="w-full text-left flex justify-between items-center py-3 px-4 bg-orange-600/80 hover:bg-orange-700/90 rounded-md focus:outline-none phase-toggle">
+            <div>
+              <h3 class="text-lg font-bold text-white">Phase 8: Centralized Education Management</h3>
+              <p class="text-sm mt-1">
+                <strong>Digitally manage all educational records and institutions, ensuring transparency, accountability, and career-ready citizens.</strong>
+              </p>
+            </div>
+            <span class="text-2xl text-white">+</span>
+          </button>
+
+          <!-- Expanded Content -->
+          <div class="phase-content hidden mt-4 text-gray-300 space-y-4">
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">🎯 Objective</h4>
+              <p>
+                Create a centralized digital system to store educational history, monitor institutions, track teacher/staff performance, and ensure transparency in education governance.
+              </p>
+              <div class="mt-2 text-sm text-gray-200 space-y-1">
+                <p><strong>Key Features:</strong> Digital student records, institution monitoring, teacher/staff tracking, accreditation, curriculum management, and performance analytics.</p>
+                <p><strong>Impacted Stakeholders:</strong> Students, teachers, school/college/university administration, education ministry, employers, and parents.</p>
+                <p><strong>Management:</strong> Education ministry oversees dashboards, audits, accreditation, and compliance monitoring for all institutions.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">⚙️ System Modules & Components</h4>
+              <ul class="list-disc list-inside ml-6 space-y-2">
+                <li><strong>Student Record Management:</strong> Centralized repository of all student academic history, grades, achievements, certifications, and attendance.</li>
+                <li><strong>Institution Monitoring Module:</strong> Tracks compliance, teacher quality, infrastructure, and curriculum standards; provides alerts for irregularities.</li>
+                <li><strong>Teacher & Staff Dashboard:</strong> Monitors performance, teaching hours, professional development, and evaluation reports.</li>
+                <li><strong>Accreditation & Quality Assurance:</strong> Digital accreditation workflows for schools, colleges, and universities ensuring compliance with education standards.</li>
+                <li><strong>Curriculum & Examination Management:</strong> Digital curriculum planning, exam scheduling, grading, and certificate issuance.</li>
+                <li><strong>Analytics & Reporting:</strong> Provides insights on student performance trends, institutional health, teacher effectiveness, and educational gaps.</li>
+                <li><strong>Citizen & Employer Dashboard:</strong> Citizens (parents/students) and employers can verify academic credentials and performance history securely.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">🧮 Data Flow Summary</h4>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>Student enrollment → Records created in central database → Institution updates academic history</li>
+                <li>Teacher/staff performance logged → Dashboards monitored by ministry → Alerts for non-compliance or irregularities</li>
+                <li>Accreditation and certification issued digitally → Employers and citizens can verify securely</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">📊 Transparency & Trust</h4>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>All academic and institutional activities are auditable</li>
+                <li>Students and parents have secure access to full educational history</li>
+                <li>Institutions monitored for compliance, teaching quality, and performance</li>
+                <li>Digital certificates prevent forgery and simplify verification for employers</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Phase 9 -->
+        <div class="bg-slate-900/70 backdrop-blur-lg rounded-2xl p-5 shadow-xl mb-6 border border-orange-500">
+          <!-- Collapsed Header -->
+          <button class="w-full text-left flex justify-between items-center py-3 px-4 bg-orange-600/80 hover:bg-orange-700/90 rounded-md focus:outline-none phase-toggle">
+            <div>
+              <h3 class="text-lg font-bold text-white">Phase 9: Career & Employment Management</h3>
+              <p class="text-sm mt-1">
+                <strong>Centralize career records of citizens and provide employers access to verified educational and professional history.</strong>
+              </p>
+            </div>
+            <span class="text-2xl text-white">+</span>
+          </button>
+
+          <!-- Expanded Content -->
+          <div class="phase-content hidden mt-4 text-gray-300 space-y-4">
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">🎯 Objective</h4>
+              <p>
+                Build a unified career management platform that tracks professional history, enables verified access for employers, and ensures transparency in recruitment and job mobility.
+              </p>
+              <div class="mt-2 text-sm text-gray-200 space-y-1">
+                <p><strong>Key Features:</strong> Centralized career records, verified professional credentials, employment history, skill tracking, and recruitment integration.</p>
+                <p><strong>Impacted Stakeholders:</strong> Citizens, employers (public & private), HR departments, education institutions, and government employment agencies.</p>
+                <p><strong>Management:</strong> Ministry of Labor & Employment and central oversight panels manage data accuracy, privacy, and access rights.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">⚙️ System Modules & Components</h4>
+              <ul class="list-disc list-inside ml-6 space-y-2">
+                <li><strong>Career Record Module:</strong> Stores all professional engagements, roles, accomplishments, certifications, and employer feedback in a secure digital format.</li>
+                <li><strong>Employer Access & Recruitment Portal:</strong> Verified access to candidate records for hiring, background checks, and skill matching with open positions.</li>
+                <li><strong>Integration with Education Module:</strong> Automatically retrieves academic credentials from Phase 8, ensuring educational background verification.</li>
+                <li><strong>Professional Skill Tracking:</strong> Tracks trainings, workshops, and certifications achieved throughout a citizen's career.</li>
+                <li><strong>Citizen Dashboard:</strong> Individuals can manage and update their career records, track job applications, and receive recommendations for career advancement.</li>
+                <li><strong>Analytics & Reporting:</strong> Government and employment agencies can monitor workforce trends, employment rates, and skill gaps.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">🧮 Data Flow Summary</h4>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>Citizen registers career history → System updates centralized records → Employers verify credentials</li>
+                <li>Education module integration → Academic qualifications automatically validated</li>
+                <li>Applications submitted → Employer dashboard tracks progress → Analytics generated for workforce insights</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">📊 Transparency & Trust</h4>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>All professional and educational records securely stored with audit trails</li>
+                <li>Employers access only verified and approved information</li>
+                <li>Citizens control visibility of personal career data</li>
+                <li>Government agencies can monitor employment trends without compromising individual privacy</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Phase 10 -->
+        <div class="bg-slate-900/70 backdrop-blur-lg rounded-2xl p-5 shadow-xl mb-6 border border-orange-500">
+          <!-- Collapsed Header -->
+          <button class="w-full text-left flex justify-between items-center py-3 px-4 bg-orange-600/80 hover:bg-orange-700/90 rounded-md focus:outline-none phase-toggle">
+            <div>
+              <h3 class="text-lg font-bold text-white">Phase 10: Utilities Management & Monitoring</h3>
+              <p class="text-sm mt-1">
+                <strong>Centralize and monitor all utility services including electricity, gas, water, and waste management to ensure efficiency and accountability.</strong>
+              </p>
+            </div>
+            <span class="text-2xl text-white">+</span>
+          </button>
+
+          <!-- Expanded Content -->
+          <div class="phase-content hidden mt-4 text-gray-300 space-y-4">
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">🎯 Objective</h4>
+              <p>
+                Establish a unified system to track, manage, and optimize utility services nationwide, improving service delivery, reducing fraud, and increasing transparency for citizens and authorities.
+              </p>
+              <div class="mt-2 text-sm text-gray-200 space-y-1">
+                <p><strong>Key Features:</strong> Real-time utility monitoring, consumption tracking, billing integration, service alerts, and maintenance scheduling.</p>
+                <p><strong>Impacted Stakeholders:</strong> Citizens, utility providers (public & private), municipal authorities, government oversight bodies.</p>
+                <p><strong>Management:</strong> Ministry of Energy & Utilities supervises dashboards, service KPIs, consumption reports, and public complaint resolution.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">⚙️ System Modules & Components</h4>
+              <ul class="list-disc list-inside ml-6 space-y-2">
+                <li><strong>Electricity Management Module:</strong> Tracks household, industrial, and commercial consumption, outages, meter readings, and billing.</li>
+                <li><strong>Gas Utility Module:</strong> Monitors supply, consumption, billing, leak detection alerts, and connection management.</li>
+                <li><strong>Water Supply & Sewage Module:</strong> Tracks water distribution, usage, quality monitoring, sewage management, and service complaints.</li>
+                <li><strong>Waste Management Module:</strong> Manages garbage collection schedules, recycling programs, complaint tracking, and municipal reporting.</li>
+                <li><strong>Citizen Dashboard:</strong> Allows citizens to view utility consumption, pay bills digitally, report issues, and track resolutions.</li>
+                <li><strong>Analytics & Optimization:</strong> Uses aggregated data for resource allocation, detecting inefficiencies, fraud detection, and improving sustainability.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">🧮 Data Flow Summary</h4>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>Citizen utility registration → System tracks usage → Providers update readings and status</li>
+                <li>Alerts & complaints → Automated routing to responsible authority → Resolutions logged</li>
+                <li>Consumption & billing data → Central dashboards → Analytics for efficiency and planning</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">📊 Transparency & Trust</h4>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>Audit trails for all utility readings and billing actions</li>
+                <li>Publicly accessible service KPIs without compromising individual privacy</li>
+                <li>Real-time citizen feedback integration for service improvement</li>
+                <li>Alerts and monitoring for anomalies, fraud detection, and timely maintenance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Phase 11 -->
+        <div class="bg-slate-900/70 backdrop-blur-lg rounded-2xl p-5 shadow-xl mb-6 border border-orange-500">
+          <!-- Collapsed Header -->
+          <button class="w-full text-left flex justify-between items-center py-3 px-4 bg-orange-600/80 hover:bg-orange-700/90 rounded-md focus:outline-none phase-toggle">
+            <div>
+              <h3 class="text-lg font-bold text-white">Phase 11: Transportation & Communication Systems</h3>
+              <p class="text-sm mt-1">
+                <strong>Digitally manage vehicles, traffic, licenses, and logistics while integrating communication networks into the national governance platform.</strong>
+              </p>
+            </div>
+            <span class="text-2xl text-white">+</span>
+          </button>
+
+          <!-- Expanded Content -->
+          <div class="phase-content hidden mt-4 text-gray-300 space-y-4">
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">🎯 Objective</h4>
+              <p>
+                Centralize the management of all transportation and communication infrastructures to enhance efficiency, safety, monitoring, and regulatory compliance.
+              </p>
+              <div class="mt-2 text-sm text-gray-200 space-y-1">
+                <p><strong>Key Features:</strong> Vehicle registration, license management, traffic monitoring, fleet logistics, communication network integration.</p>
+                <p><strong>Impacted Stakeholders:</strong> Citizens, transport authorities, traffic police, logistic companies, public transportation operators, and government regulators.</p>
+                <p><strong>Management:</strong> Ministry of Transport and Communication oversees system dashboards, compliance reports, and integration with law enforcement.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">⚙️ System Modules & Components</h4>
+              <ul class="list-disc list-inside ml-6 space-y-2">
+                <li><strong>Vehicle & License Registry:</strong> Centralized digital database for all vehicles, drivers’ licenses, and ownership transfers; automated renewal and verification.</li>
+                <li><strong>Traffic Monitoring & Management:</strong> Real-time monitoring of traffic flows, congestion alerts, violation detection, and smart routing suggestions.</li>
+                <li><strong>Fleet & Logistics Management:</strong> Tools for public and private logistics operators to track vehicles, schedules, and delivery statuses securely.</li>
+                <li><strong>Communication Network Integration:</strong> Integrates cellular, fiber, and radio networks for emergency response, transportation notifications, and IoT-enabled traffic systems.</li>
+                <li><strong>Citizen Dashboard:</strong> Vehicle info, license status, violation notices, traffic updates, and logistics tracking.</li>
+                <li><strong>Analytics & Planning:</strong> Data-driven insights for infrastructure planning, fleet efficiency, traffic optimization, and safety improvements.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">🧮 Data Flow Summary</h4>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>Vehicle registration → Records added to central database → Licenses verified digitally</li>
+                <li>Traffic sensors & IoT devices → Data streamed to monitoring dashboards → Alerts & enforcement actions</li>
+                <li>Logistics data → Fleet dashboards → Optimization and compliance reports generated</li>
+                <li>Communication networks → Emergency and public notifications routed to citizens and authorities</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">📊 Transparency & Trust</h4>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>All vehicle, license, and traffic data auditable by authorized authorities</li>
+                <li>Public dashboards for aggregated traffic and transport statistics</li>
+                <li>Real-time alerts for violations, accidents, and service updates</li>
+                <li>Secure access ensures citizen privacy while enabling oversight and analytics</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Phase 12 -->
+        <div class="bg-slate-900/70 backdrop-blur-lg rounded-2xl p-5 shadow-xl mb-6 border border-orange-500">
+          <!-- Collapsed Header -->
+          <button class="w-full text-left flex justify-between items-center py-3 px-4 bg-orange-600/80 hover:bg-orange-700/90 rounded-md focus:outline-none phase-toggle">
+            <div>
+              <h3 class="text-lg font-bold text-white">Phase 12: Environmental & Sustainability Governance</h3>
+              <p class="text-sm mt-1">
+                <strong>Integrate environmental monitoring, energy management, and industrial sustainability into the national digital platform to ensure a green and resilient ecosystem.</strong>
+              </p>
+            </div>
+            <span class="text-2xl text-white">+</span>
+          </button>
+
+          <!-- Expanded Content -->
+          <div class="phase-content hidden mt-4 text-gray-300 space-y-4">
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">🎯 Objective</h4>
+              <p>
+                Establish a centralized system for environmental governance, sustainable resource management, and climate monitoring to support evidence-based decision-making and national sustainability goals.
+              </p>
+              <div class="mt-2 text-sm text-gray-200 space-y-1">
+                <p><strong>Key Features:</strong> Environmental monitoring, energy optimization, industrial compliance tracking, carbon footprint assessment, sustainable policy enforcement.</p>
+                <p><strong>Impacted Stakeholders:</strong> Citizens, government agencies (environment, energy, industry), industrial operators, utility providers, and environmental NGOs.</p>
+                <p><strong>Management:</strong> Ministry of Environment & Energy oversees compliance, sustainability dashboards, and integration with other national governance systems.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">⚙️ System Modules & Components</h4>
+              <ul class="list-disc list-inside ml-6 space-y-2">
+                <li><strong>Environmental Monitoring Module:</strong> Real-time monitoring of air, water, and soil quality using IoT sensors and satellite data.</li>
+                <li><strong>Energy & Resource Management:</strong> Tracks energy production, consumption, renewable energy usage, and resource allocation efficiency.</li>
+                <li><strong>Industrial Compliance Module:</strong> Monitors emissions, waste management, and regulatory compliance for factories and industrial zones.</li>
+                <li><strong>Carbon Footprint & Sustainability Dashboard:</strong> Provides analytics on national carbon emissions, progress toward sustainability targets, and mitigation strategies.</li>
+                <li><strong>Citizen Engagement:</strong> Public dashboards for awareness, reporting environmental violations, and promoting sustainable behaviors.</li>
+                <li><strong>Integration with Utilities, Transport, & Industry:</strong> Correlates energy, transport, and industrial activity to optimize national sustainability.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">🧮 Data Flow Summary</h4>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>IoT sensors & industrial reporting → Central platform → Dashboards & alerts</li>
+                <li>Energy consumption & transport data → Correlation with environmental metrics → Optimization recommendations</li>
+                <li>Citizen reports & compliance checks → Automated enforcement & notification</li>
+                <li>National sustainability KPIs → Policy dashboards → Strategic planning</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">📊 Transparency & Trust</h4>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>Public access to aggregated environmental and energy data</li>
+                <li>Verified industrial compliance records accessible to regulators</li>
+                <li>Real-time alerts for environmental violations or anomalies</li>
+                <li>Data-driven transparency ensures accountability and informed citizen participation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Phase 13 -->
+        <div class="bg-slate-900/70 backdrop-blur-lg rounded-2xl p-5 shadow-xl mb-6 border border-orange-500">
+          <!-- Collapsed Header -->
+          <button class="w-full text-left flex justify-between items-center py-3 px-4 bg-orange-600/80 hover:bg-orange-700/90 rounded-md focus:outline-none phase-toggle">
+            <div>
+              <h3 class="text-lg font-bold text-white">Phase 13: National Strategic, Innovation & Security Governance</h3>
+              <p class="text-sm mt-1">
+                <strong>Elevate the digital nation to a forward-looking, innovation-driven, globally integrated ecosystem with robust strategic oversight and national security governance.</strong>
+              </p>
+            </div>
+            <span class="text-2xl text-white">+</span>
+          </button>
+
+          <!-- Expanded Content -->
+          <div class="phase-content hidden mt-4 text-gray-300 space-y-4">
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">🎯 Objective</h4>
+              <p>
+                Transform the national digital platform into a comprehensive strategic, innovation, and security governance system, capable of proactive decision-making, global collaboration, and long-term national resilience.
+              </p>
+              <div class="mt-2 text-sm text-gray-200 space-y-1">
+                <p><strong>Key Features:</strong> Strategic planning dashboards, innovation tracking, cybersecurity oversight, risk management, defense & intelligence integration.</p>
+                <p><strong>Impacted Stakeholders:</strong> Government leadership, national security agencies, strategic policy planners, citizens, industry leaders, and international partners.</p>
+                <p><strong>Management:</strong> Prime Minister’s Office and National Security Council oversee strategy execution, innovation programs, security monitoring, and global partnerships.</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">⚙️ System Modules & Components</h4>
+              <ul class="list-disc list-inside ml-6 space-y-2">
+                <li><strong>Strategic Planning Module:</strong> Consolidates national data from all sectors to provide scenario modeling, forecasting, and decision support dashboards.</li>
+                <li><strong>Innovation & Research Hub:</strong> Tracks national innovation projects, R&D progress, technological adoption, and collaboration with universities and private sector.</li>
+                <li><strong>National Security & Defense Module:</strong> Integrates intelligence, defense readiness, cybersecurity monitoring, and crisis management tools.</li>
+                <li><strong>Risk Assessment & Early Warning:</strong> Predictive analytics for natural disasters, economic threats, security incidents, and policy impacts.</li>
+                <li><strong>Global Integration & Collaboration:</strong> Secure international data sharing, strategic partnerships, and alignment with global best practices in governance and security.</li>
+                <li><strong>Citizen Engagement:</strong> Aggregate feedback for national initiatives, innovation proposals, and security awareness programs while maintaining confidentiality and security.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">🧮 Data Flow Summary</h4>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>Sectoral data → Strategic dashboards → Scenario planning & decision-making</li>
+                <li>Innovation & research inputs → Central hub → Policy recommendations & funding allocation</li>
+                <li>Security & defense intelligence → Risk engine → Alerts & crisis response coordination</li>
+                <li>Global collaboration feeds → National strategy alignment → Secure data integration</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-orange-400 font-semibold text-lg">📊 Transparency & Trust</h4>
+              <ul class="list-disc list-inside ml-6 space-y-1">
+                <li>Strategic and innovation dashboards visible to authorized leadership and oversight bodies</li>
+                <li>Audit trails for national security and crisis management actions</li>
+                <li>Secure collaboration channels with global partners and research institutions</li>
+                <li>Proactive monitoring, accountability, and real-time reporting to maintain trust and resilience</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </section>
+
+  <section class="max-w-7xl mx-auto px-6 py-8">
+    <div class="bg-slate-900/70 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-orange-500">
+      <h2 class="text-2xl font-bold text-white mb-4">General Technical Architecture & Authentication</h2>
+      <p class="text-gray-300 mb-4">
+        The Digital Nation system is built on a standardized technical architecture to ensure scalability, security, and uniformity across all 13 phases.
+      </p>
+
+      <div class="space-y-4">
+        <div>
+          <h3 class="text-orange-400 font-semibold text-lg mb-2">⚙️ Technical Architecture Overview</h3>
+          <ul class="list-disc list-inside ml-6 text-gray-200 space-y-2">
+            <li><strong>Frontend Layer:</strong> Web & mobile applications with responsive, multilingual dashboards for citizens and officials.</li>
+            <li><strong>Application / Middleware Layer:</strong> Microservices architecture for modular features and secure API integrations.</li>
+            <li><strong>Database Layer:</strong> PostgreSQL / MongoDB for structured and unstructured data; distributed storage (IPFS) for large-scale document management.</li>
+            <li><strong>Blockchain Ledger:</strong> Immutable record storage for critical actions like votes, approvals, contracts, and legal documents.</li>
+            <li><strong>Security Gateway:</strong> SSL, encryption, firewalls, intrusion detection, and token validation ensuring end-to-end protection.</li>
+            <li><strong>AI & Monitoring Engine:</strong> Real-time anomaly detection, alerts, predictive analytics, and audit support.</li>
+            <li><strong>Integration Layer:</strong> IoT, sensors, industrial systems, utilities, and external APIs for seamless service provision.</li>
+            <li><strong>Infrastructure:</strong> Hybrid deployment to meet government data privacy and resilience requirements.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-orange-400 font-semibold text-lg mb-2">🔐 Authentication & Security Options</h3>
+          <ul class="list-disc list-inside ml-6 text-gray-200 space-y-1">
+            <li><strong>Biometric Verification:</strong> Fingerprint or Face ID linked to NID for citizens.</li>
+            <li><strong>OTP Verification:</strong> One-Time Password sent to registered mobile numbers for secondary verification.</li>
+            <li><strong>Smartcard / Hardware Tokens:</strong> Optional for officials or assisted booths for added security.</li>
+            <li><strong>Role-Based Access Control:</strong> Granular permissions for citizens, officials, EC observers, and auditors.</li>
+            <li><strong>Multi-Factor Authentication:</strong> Enforced for critical operations across all modules.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- FOOTER -->
+<footer class="text-center py-5 text-gray-500 text-sm">
+  © 2026 Iftekher Mahmud — All rights reserved
+</footer>
+</div>
+<!-- JS -->
+<script>
+ // Mobile menu toggle
+  const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('mobileNavOverlay');
+
+  function openMenu() {
+    if (!menu) return;
+    menu.classList.remove('hidden');
+    if (overlay) overlay.classList.remove('hidden');
+    requestAnimationFrame(() => {
+      menu.classList.remove('-translate-y-4', 'opacity-0');
+      menu.classList.add('translate-y-0', 'opacity-100');
+    });
+  }
+
+  function closeMenu() {
+    if (!menu) return;
+    menu.classList.add('-translate-y-4', 'opacity-0');
+    menu.classList.remove('translate-y-0', 'opacity-100');
+    setTimeout(() => {
+      menu.classList.add('hidden');
+      if (overlay) overlay.classList.add('hidden');
+    }, 300);
+  }
+
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      if (menu.classList.contains('hidden')) openMenu();
+      else closeMenu();
+    });
+  }
+
+  if (overlay) overlay.addEventListener('click', closeMenu);
+
+  if (menu) {
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+  }
+
+  // --------- Smooth Scrolling for Nav Links ---------
+  const navLinks = document.querySelectorAll('header nav a, #mobileMenu a');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      const href = link.getAttribute('href');
+
+      // Only handle internal anchors
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+
+  // STAR ANIMATION
+  const canvas = document.getElementById('starCanvas');
+  const ctx = canvas.getContext('2d');
+
+  let stars = [];
+  let shootingStars = [];
+
+  const isMobile = window.innerWidth < 768;
+  const numStars = isMobile ? 200 : 1000;
+  const maxGlow = isMobile ? 1.5 : 5;
+  const shootingStarChance = isMobile ? 0.003 : 0.015;
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', () => {
+    resizeCanvas();
+    initStars();
+  });
+  resizeCanvas();
+
+  function initStars() {
+    stars = [];
+    for (let i = 0; i < numStars; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * (isMobile ? 1 : 1.5) + 0.3,
+        baseAlpha: Math.random() * 0.7 + 0.3,
+        alphaOffset: Math.random() * Math.PI * 2,
+        flickerSpeed: Math.random() * 0.02 + 0.01,
+        glow: Math.random() * maxGlow + 1
+      });
+    }
+  }
+
+  function initShootingStar() {
+    if (isMobile && shootingStars.length > 1) return;
+    shootingStars.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height / 2,
+      length: Math.random() * (isMobile ? 150 : 300) + (isMobile ? 75 : 150),
+      speedX: Math.random() * (isMobile ? 6 : 12) + (isMobile ? 4 : 8),
+      speedY: Math.random() * (isMobile ? 2 : 4) + (isMobile ? 1 : 2),
+      alpha: 1,
+      fadeRate: Math.random() * (isMobile ? 0.01 : 0.02) + (isMobile ? 0.007 : 0.015)
+    });
+  }
+
+  function drawStars(time) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    stars.forEach(s => {
+      const alpha = s.baseAlpha + Math.sin(time * s.flickerSpeed + s.alphaOffset) * 0.5 * s.baseAlpha;
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+      ctx.fillStyle = `rgba(255,255,255,${alpha})`;
+      ctx.shadowBlur = s.glow;
+      ctx.shadowColor = 'white';
+      ctx.fill();
+    });
+
+    shootingStars.forEach((s, idx) => {
+      ctx.beginPath();
+      ctx.moveTo(s.x, s.y);
+      ctx.lineTo(s.x - s.length, s.y - s.length * 0.1);
+      ctx.strokeStyle = `rgba(255,255,255,${s.alpha})`;
+      ctx.lineWidth = 2;
+      ctx.shadowBlur = isMobile ? 3 : 15;
+      ctx.shadowColor = 'white';
+      ctx.stroke();
+
+      s.x += s.speedX;
+      s.y += s.speedY;
+      s.alpha -= s.fadeRate;
+
+      if (s.alpha <= 0 || s.x - s.length > canvas.width || s.y > canvas.height) {
+        shootingStars.splice(idx, 1);
+      }
+    });
+
+    if (Math.random() < shootingStarChance) initShootingStar();
+    requestAnimationFrame(() => drawStars(performance.now() / 1000));
+  }
+
+  initStars();
+  drawStars();
+
+
+</script>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Iftekher Mahmud",
+    "url": "https://yourdomain.com/",
+    "jobTitle": "Senior Software Engineer",
+    "sameAs": [
+      "https://www.linkedin.com/in/your-profile",
+      "https://github.com/your-username"
+    ],
+    "knowsAbout": [
+      "Java",
+      "Spring Boot",
+      "Fintech",
+      "ERP Systems",
+      "Mobile Financial Services",
+      "Backend Development"
+    ]
+  }
+</script>
+
+<script>
+  document.querySelectorAll('.phase-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const content = btn.nextElementSibling;
+      const icon = btn.querySelector('span:last-child');
+      content.classList.toggle('hidden');
+      icon.textContent = content.classList.contains('hidden') ? '+' : '−';
+    });
+  });
+</script>
+
+
+</body>
+</html>
